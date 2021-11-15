@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		49BA10BF273327250067504C /* nikolaiev_lecture_5_homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nikolaiev_lecture_5_homework.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49BA10BF273327250067504C /* nikolaiev_lecture_course_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nikolaiev_lecture_course_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BA10C2273327250067504C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49BA10C4273327250067504C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		49BA10C6273327250067504C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		49BA10B6273327250067504C = {
 			isa = PBXGroup;
 			children = (
-				49BA10C1273327250067504C /* nikolaiev_lecture_5_homework */,
+				49BA10C1273327250067504C /* nikolaiev_lecture_course_project */,
 				49BA10C0273327250067504C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,12 +48,12 @@
 		49BA10C0273327250067504C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49BA10BF273327250067504C /* nikolaiev_lecture_5_homework.app */,
+				49BA10BF273327250067504C /* nikolaiev_lecture_course_project.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		49BA10C1273327250067504C /* nikolaiev_lecture_5_homework */ = {
+		49BA10C1273327250067504C /* nikolaiev_lecture_course_project */ = {
 			isa = PBXGroup;
 			children = (
 				49BA10C2273327250067504C /* AppDelegate.swift */,
@@ -64,15 +64,15 @@
 				49BA10CD273327260067504C /* LaunchScreen.storyboard */,
 				49BA10D0273327260067504C /* Info.plist */,
 			);
-			path = nikolaiev_lecture_5_homework;
+			path = nikolaiev_lecture_course_project;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		49BA10BE273327250067504C /* nikolaiev_lecture_5_homework */ = {
+		49BA10BE273327250067504C /* nikolaiev_lecture_course_project */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 49BA10D3273327260067504C /* Build configuration list for PBXNativeTarget "nikolaiev_lecture_5_homework" */;
+			buildConfigurationList = 49BA10D3273327260067504C /* Build configuration list for PBXNativeTarget "nikolaiev_lecture_course_project" */;
 			buildPhases = (
 				49BA10BB273327250067504C /* Sources */,
 				49BA10BC273327250067504C /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = nikolaiev_lecture_5_homework;
+			name = nikolaiev_lecture_course_project;
 			productName = nikolaiev_lecture_5_homework;
-			productReference = 49BA10BF273327250067504C /* nikolaiev_lecture_5_homework.app */;
+			productReference = 49BA10BF273327250067504C /* nikolaiev_lecture_course_project.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 49BA10BA273327250067504C /* Build configuration list for PBXProject "nikolaiev_lecture_5_homework" */;
+			buildConfigurationList = 49BA10BA273327250067504C /* Build configuration list for PBXProject "nikolaiev_lecture_course_project" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				49BA10BE273327250067504C /* nikolaiev_lecture_5_homework */,
+				49BA10BE273327250067504C /* nikolaiev_lecture_course_project */,
 			);
 		};
 /* End PBXProject section */
@@ -341,7 +341,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		49BA10BA273327250067504C /* Build configuration list for PBXProject "nikolaiev_lecture_5_homework" */ = {
+		49BA10BA273327250067504C /* Build configuration list for PBXProject "nikolaiev_lecture_course_project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49BA10D1273327260067504C /* Debug */,
@@ -350,7 +350,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		49BA10D3273327260067504C /* Build configuration list for PBXNativeTarget "nikolaiev_lecture_5_homework" */ = {
+		49BA10D3273327260067504C /* Build configuration list for PBXNativeTarget "nikolaiev_lecture_course_project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49BA10D4273327260067504C /* Debug */,
