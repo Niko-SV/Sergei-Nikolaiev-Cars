@@ -56,6 +56,20 @@ class ProfileFlowViewController: UIViewController, UITextFieldDelegate {
         viewSelection(type: EditModeType.view)
     }
     
+   
+    @IBAction func logoutButton(_ sender: UIBarButtonItem) {
+        showAlert()
+    }
+    
+    func showAlert() {
+        let alert = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Logout", style: UIAlertAction.Style.default, handler: {_ in
+            self.performSegue(withIdentifier: "logoutSegue", sender: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        }
+    
     private func viewSelection(type: EditModeType){
         let isEditMode = type == EditModeType.edit
         textFields.forEach({$0.isEnabled = isEditMode})
@@ -96,4 +110,5 @@ enum EditModeType {
     case edit
     case view
 }
+
 

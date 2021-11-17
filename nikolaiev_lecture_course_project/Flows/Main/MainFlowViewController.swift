@@ -11,5 +11,13 @@ class MainFlowViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let moveToDetailsBarButton = UIBarButtonItem(title: "Details", style: .done, target: self, action: #selector(moveToDetails))
+        self.navigationItem.rightBarButtonItem = moveToDetailsBarButton
     }
+    
+    @objc func moveToDetails() {
+        self.performSegue(withIdentifier: "moveToDetails", sender: self)
+    }
+    
 }

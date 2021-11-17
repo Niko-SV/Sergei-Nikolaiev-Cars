@@ -8,14 +8,14 @@
     </dependencies>
     <scenes>
         <!--MainFlow-->
-        <scene sceneID="bpI-Nl-TXW">
+        <scene sceneID="Te7-eH-Z8a">
             <objects>
-                <viewControllerPlaceholder storyboardName="MainFlow" id="omg-bd-P3I" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="doc" catalog="system" selectedImage="doc" id="k9W-Jf-Gn0"/>
+                <viewControllerPlaceholder storyboardName="MainFlow" id="s36-NG-0DA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Main" image="tray" catalog="system" selectedImage="tray" id="U6H-sU-non"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aCM-cJ-uqF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jom-PC-xMj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-967" y="-212"/>
+            <point key="canvasLocation" x="-975" y="-207"/>
         </scene>
         <!--EditFlow-->
         <scene sceneID="r9R-6g-R63">
@@ -47,9 +47,9 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="ezA-vi-MZh" kind="relationship" relationship="viewControllers" id="636-PO-lRP"/>
-                        <segue destination="MJu-Ex-4RZ" kind="relationship" relationship="viewControllers" id="Rxo-mx-mkG"/>
-                        <segue destination="omg-bd-P3I" kind="relationship" relationship="viewControllers" id="nRB-2f-dFp"/>
+                        <segue destination="s36-NG-0DA" kind="relationship" relationship="viewControllers" id="pHa-dL-nND"/>
+                        <segue destination="MJu-Ex-4RZ" kind="relationship" relationship="viewControllers" id="U06-DR-LBc"/>
+                        <segue destination="ezA-vi-MZh" kind="relationship" relationship="viewControllers" id="f5k-LU-y7u"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4g-5c-jhL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -58,7 +58,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="doc" catalog="system" width="115" height="128"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="tray" catalog="system" width="128" height="88"/>
     </resources>
