@@ -12,7 +12,7 @@
         <!--Authentification-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="AuthFlowViewController" customModule="nikolaiev_lecture_course_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="auth_vc" modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="AuthFlowViewController" customModule="nikolaiev_lecture_course_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
         <!--Sign In-->
         <scene sceneID="ZqC-HL-saz">
             <objects>
-                <viewController id="Jw5-Gd-RBo" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Jw5-Gd-RBo" customClass="SignInViewController" customModule="nikolaiev_lecture_course_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gxx-Rh-SGB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,6 +78,10 @@
                                 <color key="tintColor" systemColor="systemBrownColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign In"/>
+                                <connections>
+                                    <action selector="signInButton:" destination="Jw5-Gd-RBo" eventType="touchUpInside" id="x6P-Ce-8nN"/>
+                                    <segue destination="9eU-mj-iu8" kind="showDetail" id="MCA-Qa-DTv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="r3t-vz-OF7"/>
@@ -115,7 +119,7 @@
         <!--Sign Up-->
         <scene sceneID="IIM-t8-OtZ">
             <objects>
-                <viewController id="Bo6-MR-17P" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Bo6-MR-17P" customClass="SignUpViewController" customModule="nikolaiev_lecture_course_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="44j-Hz-cFt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,6 +132,10 @@
                                 <color key="tintColor" systemColor="systemBrownColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUpButton:" destination="Bo6-MR-17P" eventType="touchUpInside" id="nfA-aK-bes"/>
+                                    <segue destination="9eU-mj-iu8" kind="showDetail" id="EQ1-WG-dPZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ShV-XW-Mf6"/>
@@ -144,7 +152,20 @@
             </objects>
             <point key="canvasLocation" x="1777" y="438"/>
         </scene>
+        <!--Main-->
+        <scene sceneID="a8l-Cy-WCd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="9eU-mj-iu8" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="8Ve-mh-2t8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wbz-z7-bOJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2461" y="83"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="MCA-Qa-DTv"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

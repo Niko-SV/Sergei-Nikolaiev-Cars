@@ -86,6 +86,7 @@
                                             </switch>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRG-N3-uu8">
                                                 <rect key="frame" x="20" y="426" width="374" height="31"/>
+                                                <color key="backgroundColor" systemColor="systemBrownColor"/>
                                                 <color key="tintColor" systemColor="systemBrownColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Edit"/>
@@ -95,6 +96,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbr-2s-rYW">
                                                 <rect key="frame" x="20" y="467" width="374" height="31"/>
+                                                <color key="backgroundColor" systemColor="systemBrownColor"/>
                                                 <color key="tintColor" systemColor="systemBrownColor"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Save"/>
@@ -182,10 +184,10 @@
             </objects>
             <point key="canvasLocation" x="937.68115942028987" y="66.964285714285708"/>
         </scene>
-        <!--AuthFlow-->
+        <!--Main-->
         <scene sceneID="7ke-7F-Shn">
             <objects>
-                <viewControllerPlaceholder storyboardName="AuthFlow" id="qjs-7F-PAg" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Main" id="qjs-7F-PAg" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="miN-bX-0e6"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZm-ag-Oe6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

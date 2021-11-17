@@ -11,4 +11,8 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func signInButton(_ sender: UIButton) {
+        UserDefaults.standard.set(true, forKey: DefaultKeys.userLoggedIn)
+    }
 }

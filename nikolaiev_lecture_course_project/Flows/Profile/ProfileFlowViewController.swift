@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileFlowViewController: UIViewController, UITextFieldDelegate {
+class ProfileFlowViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var topImage: UIImageView!
@@ -21,6 +21,9 @@ class ProfileFlowViewController: UIViewController, UITextFieldDelegate {
     weak var activeField: UITextField?
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        if let placeholder = textField.placeholder {
+            UserDefaults.standard.set(textField.text, forKey: placeholder)
+        }
         activeField = nil
     }
     
@@ -35,9 +38,15 @@ class ProfileFlowViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(ProfileFlowViewController.keyboardDidShow),name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ProfileFlowViewController.keyboardWillBeHidden),
                                                name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        textFields.forEach({
+            if let placeholder = $0.placeholder {
+                $0.text = UserDefaults.standard.string(forKey: placeholder)
+            }
+        })
     }
     
-    deinit {
+    deinit{
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -56,19 +65,26 @@ class ProfileFlowViewController: UIViewController, UITextFieldDelegate {
         viewSelection(type: EditModeType.view)
     }
     
-   
+    
     @IBAction func logoutButton(_ sender: UIBarButtonItem) {
         showAlert()
     }
     
     func showAlert() {
         let alert = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Logout", style: UIAlertAction.Style.default, handler: {_ in
+        alert.addAction(UIAlertAction(title: "Logout",style: UIAlertAction.Style.destructive, handler: {_ in
+            UserDefaults.standard.set(false, forKey: DefaultKeys.userLoggedIn)
+            self.textFields.forEach({
+                if let placeholder = $0.placeholder {
+                    UserDefaults.standard.removeObject(forKey: placeholder)
+                }
+            })
+    
             self.performSegue(withIdentifier: "logoutSegue", sender: nil)
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
-        }
+    }
     
     private func viewSelection(type: EditModeType){
         let isEditMode = type == EditModeType.edit

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditFlowViewController: UIViewController {
+class CollectionFlowViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

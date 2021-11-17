@@ -15,17 +15,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jom-PC-xMj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-975" y="-207"/>
+            <point key="canvasLocation" x="-991" y="-289"/>
         </scene>
-        <!--EditFlow-->
+        <!--CollectionFlow-->
         <scene sceneID="r9R-6g-R63">
             <objects>
-                <viewControllerPlaceholder storyboardName="EditFlow" id="MJu-Ex-4RZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Edit" image="pencil" catalog="system" selectedImage="pencil" id="XGY-k8-oU4"/>
+                <viewControllerPlaceholder storyboardName="CollectionFlow" id="MJu-Ex-4RZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Collection" image="folder" catalog="system" selectedImage="folder" id="XGY-k8-oU4"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWZ-at-Ua7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-964" y="-119"/>
+            <point key="canvasLocation" x="-987" y="-119"/>
         </scene>
         <!--ProfileFlow-->
         <scene sceneID="biM-LQ-eYr">
@@ -35,12 +35,12 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyy-qE-Yv9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-975" y="-34"/>
+            <point key="canvasLocation" x="-964" y="64"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main View Controller-->
         <scene sceneID="bso-RE-Mie">
             <objects>
-                <tabBarController id="0yr-84-hZ3" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="0yr-84-hZ3" customClass="MainViewController" customModule="nikolaiev_lecture_course_project" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dAA-me-5Mb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -58,7 +58,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="folder" catalog="system" width="128" height="97"/>
         <image name="tray" catalog="system" width="128" height="88"/>
     </resources>
 </document>
