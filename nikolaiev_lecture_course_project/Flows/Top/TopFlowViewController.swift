@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CollectionFlowViewController: UIViewController {
+class TopFlowViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

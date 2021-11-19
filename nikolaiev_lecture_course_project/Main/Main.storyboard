@@ -17,11 +17,11 @@
             </objects>
             <point key="canvasLocation" x="-991" y="-289"/>
         </scene>
-        <!--CollectionFlow-->
+        <!--TopFlow-->
         <scene sceneID="r9R-6g-R63">
             <objects>
-                <viewControllerPlaceholder storyboardName="CollectionFlow" id="MJu-Ex-4RZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection" image="folder" catalog="system" selectedImage="folder" id="XGY-k8-oU4"/>
+                <viewControllerPlaceholder storyboardName="TopFlow" id="MJu-Ex-4RZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Help" image="pencil" catalog="system" selectedImage="pencil" id="XGY-k8-oU4"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWZ-at-Ua7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,7 +58,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="folder" catalog="system" width="128" height="97"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="tray" catalog="system" width="128" height="88"/>
     </resources>
 </document>

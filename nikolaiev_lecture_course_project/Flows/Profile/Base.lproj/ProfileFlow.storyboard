@@ -177,7 +177,7 @@
                         <outletCollection property="textFields" destination="9nh-6Q-OnP" collectionClass="NSMutableArray" id="Cmx-gS-IOO"/>
                         <outletCollection property="textFields" destination="Ts2-3d-9Q6" collectionClass="NSMutableArray" id="Z8o-wU-tuW"/>
                         <outletCollection property="textFields" destination="bMu-ui-o8r" collectionClass="NSMutableArray" id="lSl-J9-0Kj"/>
-                        <segue destination="qjs-7F-PAg" kind="show" identifier="logoutSegue" id="d35-nu-xaZ"/>
+                        <segue destination="qjs-7F-PAg" kind="show" identifier="logoutSegue" animates="NO" id="d35-nu-xaZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

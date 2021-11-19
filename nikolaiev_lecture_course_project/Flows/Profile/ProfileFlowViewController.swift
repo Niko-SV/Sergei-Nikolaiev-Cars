@@ -17,7 +17,7 @@ class ProfileFlowViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var agreementSwitch: UISwitch!
-    
+        
     weak var activeField: UITextField?
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -72,7 +72,7 @@ class ProfileFlowViewController: UIViewController, UITextFieldDelegate{
     
     func showAlert() {
         let alert = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Logout",style: UIAlertAction.Style.destructive, handler: {_ in
+        alert.addAction(UIAlertAction(title: "Yes",style: UIAlertAction.Style.destructive, handler: {_ in
             UserDefaults.standard.set(false, forKey: DefaultKeys.userLoggedIn)
             self.textFields.forEach({
                 if let placeholder = $0.placeholder {
@@ -82,7 +82,7 @@ class ProfileFlowViewController: UIViewController, UITextFieldDelegate{
     
             self.performSegue(withIdentifier: "logoutSegue", sender: nil)
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
