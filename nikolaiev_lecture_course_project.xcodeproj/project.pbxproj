@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02260163274BCA9100471BB7 /* BrandsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02260162274BCA9100471BB7 /* BrandsModel.swift */; };
+		02BC62D3274BA2E700D5BF66 /* CellDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC62D2274BA2E700D5BF66 /* CellDetailsViewController.swift */; };
 		02BEA8D52744ECBB00339D91 /* MainDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BEA8D42744ECBB00339D91 /* MainDetailsViewController.swift */; };
 		02BEA8D82744F0EE00339D91 /* AuthFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BEA8D72744F0EE00339D91 /* AuthFlowViewController.swift */; };
 		02BEA8DA2744F0F800339D91 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BEA8D92744F0F800339D91 /* SignInViewController.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02260162274BCA9100471BB7 /* BrandsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsModel.swift; sourceTree = "<group>"; };
+		02BC62D2274BA2E700D5BF66 /* CellDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDetailsViewController.swift; sourceTree = "<group>"; };
 		02BEA8D42744ECBB00339D91 /* MainDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailsViewController.swift; sourceTree = "<group>"; };
 		02BEA8D72744F0EE00339D91 /* AuthFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowViewController.swift; sourceTree = "<group>"; };
 		02BEA8D92744F0F800339D91 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 			children = (
 				02D21099274459D5001AC554 /* MainFlowViewController.swift */,
 				02BEA8D42744ECBB00339D91 /* MainDetailsViewController.swift */,
+				02BC62D2274BA2E700D5BF66 /* CellDetailsViewController.swift */,
 				02C2AA092747BBFF00004222 /* CustomTableViewCell.swift */,
 				02BEA8DF27451EDB00339D91 /* MainFlow.storyboard */,
 			);
@@ -144,6 +149,7 @@
 			children = (
 				49BA10C2273327250067504C /* AppDelegate.swift */,
 				02BEA8E12745979400339D91 /* DefaultKeys.swift */,
+				02260162274BCA9100471BB7 /* BrandsModel.swift */,
 				49BA10C4273327250067504C /* SceneDelegate.swift */,
 				02D2108F2744592E001AC554 /* Main */,
 				02D2109127445941001AC554 /* Flows */,
@@ -232,9 +238,11 @@
 				02BEA8D82744F0EE00339D91 /* AuthFlowViewController.swift in Sources */,
 				02D2109A274459D5001AC554 /* MainFlowViewController.swift in Sources */,
 				02D2109627445960001AC554 /* TopFlowViewController.swift in Sources */,
+				02BC62D3274BA2E700D5BF66 /* CellDetailsViewController.swift in Sources */,
 				49BA10C7273327250067504C /* ProfileFlowViewController.swift in Sources */,
 				02BEA8DC2744F10200339D91 /* SignUpViewController.swift in Sources */,
 				02BEA8D52744ECBB00339D91 /* MainDetailsViewController.swift in Sources */,
+				02260163274BCA9100471BB7 /* BrandsModel.swift in Sources */,
 				02C2AA0A2747BC0000004222 /* CustomTableViewCell.swift in Sources */,
 				02BEA8E22745979400339D91 /* DefaultKeys.swift in Sources */,
 				02BEA8DA2744F0F800339D91 /* SignInViewController.swift in Sources */,
