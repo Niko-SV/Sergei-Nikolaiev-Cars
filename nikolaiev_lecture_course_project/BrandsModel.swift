@@ -20,7 +20,7 @@ struct Brand {
         "Smart": "Germany", "Mini": "United Kingdom", "BMW": "Germany", "Mitsubishi": "Japan", "Nissan": "Japan"
     ]
     
-    static func getBrands() -> [Brand] {
+    static func getBrands(cardBrands: [String: String]) -> [Brand] {
         
         var brands = [Brand]()
         

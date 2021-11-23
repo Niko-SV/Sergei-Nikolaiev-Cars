@@ -79,15 +79,15 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LPr-Dh-Gaw">
-                                                <rect key="frame" x="345" y="355" width="51" height="31"/>
+                                                <rect key="frame" x="345" y="360" width="51" height="31"/>
                                                 <connections>
-                                                    <action selector="agreementSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="yEj-HA-htz"/>
+                                                    <action selector="agreementSwitchValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="e5D-U8-Lw9"/>
                                                 </connections>
                                             </switch>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRG-N3-uu8">
                                                 <rect key="frame" x="20" y="426" width="374" height="31"/>
-                                                <color key="backgroundColor" systemColor="systemBrownColor"/>
-                                                <color key="tintColor" systemColor="systemBrownColor"/>
+                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                <color key="tintColor" red="0.74117654560000001" green="0.14509806040000001" blue="0.02745098248" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Edit"/>
                                                 <connections>
@@ -96,8 +96,8 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbr-2s-rYW">
                                                 <rect key="frame" x="20" y="467" width="374" height="31"/>
-                                                <color key="backgroundColor" systemColor="systemBrownColor"/>
-                                                <color key="tintColor" systemColor="systemBrownColor"/>
+                                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                <color key="tintColor" red="0.74117654560000001" green="0.14509806040000001" blue="0.02745098248" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Save"/>
                                                 <connections>
@@ -114,7 +114,6 @@
                                             <constraint firstItem="fh2-p6-ySJ" firstAttribute="leading" secondItem="KT1-6Q-RUw" secondAttribute="leading" constant="20" id="4NX-9q-z30"/>
                                             <constraint firstAttribute="trailing" secondItem="MRG-N3-uu8" secondAttribute="trailing" constant="20" id="5zd-aE-k5e"/>
                                             <constraint firstAttribute="trailing" secondItem="bMu-ui-o8r" secondAttribute="trailing" constant="20" id="AX2-Yi-Yg6"/>
-                                            <constraint firstItem="LPr-Dh-Gaw" firstAttribute="top" secondItem="XHw-hx-fw6" secondAttribute="bottom" constant="30" id="BFr-VX-aec"/>
                                             <constraint firstItem="9nh-6Q-OnP" firstAttribute="leading" secondItem="KT1-6Q-RUw" secondAttribute="leading" constant="20" id="Biu-Kg-loX"/>
                                             <constraint firstItem="9sY-2r-QHG" firstAttribute="leading" secondItem="KT1-6Q-RUw" secondAttribute="leading" constant="20" id="BmG-Xn-NpC"/>
                                             <constraint firstItem="XHw-hx-fw6" firstAttribute="leading" secondItem="KT1-6Q-RUw" secondAttribute="leading" constant="20" id="C6e-Kk-P4A"/>
@@ -132,6 +131,7 @@
                                             <constraint firstAttribute="trailing" secondItem="9sY-2r-QHG" secondAttribute="trailing" constant="20" id="pXh-Xd-xrY"/>
                                             <constraint firstAttribute="trailing" secondItem="XHw-hx-fw6" secondAttribute="trailing" constant="20" id="rkB-TU-yRp"/>
                                             <constraint firstItem="Ts2-3d-9Q6" firstAttribute="top" secondItem="9nh-6Q-OnP" secondAttribute="bottom" constant="10" id="t6g-U5-dbn"/>
+                                            <constraint firstItem="LPr-Dh-Gaw" firstAttribute="centerY" secondItem="fh2-p6-ySJ" secondAttribute="centerY" id="toS-dH-PVV"/>
                                             <constraint firstItem="Ts2-3d-9Q6" firstAttribute="leading" secondItem="KT1-6Q-RUw" secondAttribute="leading" constant="20" id="v0G-LO-2tO"/>
                                             <constraint firstAttribute="trailing" secondItem="9nh-6Q-OnP" secondAttribute="trailing" constant="20" id="zBw-cz-Yq5"/>
                                         </constraints>
@@ -220,8 +220,8 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -9,7 +9,8 @@ import UIKit
 
 class MainFlowViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let brands = Brand.getBrands()
+    var brands = Brand.getBrands(cardBrands: Brand.carBrands)
+    var currentBrand: Brand? = nil
     
     let myRefreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -17,7 +18,7 @@ class MainFlowViewController: UIViewController, UITableViewDataSource, UITableVi
         return refreshControl
     }()
     
-    @IBOutlet weak var table: UITableView!
+    @IBOutlet weak private var table: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +29,7 @@ class MainFlowViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     @objc private func refresh(sender: UIRefreshControl) {
+        brands += brands
         table.reloadData()
         sender.endRefreshing()
     }
@@ -36,10 +38,13 @@ class MainFlowViewController: UIViewController, UITableViewDataSource, UITableVi
         self.performSegue(withIdentifier: "moveToDetails", sender: self)
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        CellDetailsViewController = CellDetailsViewController()
-//        controller.brand = brands[indexPath.item]
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "MainFlow", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CellDetailsViewController") as! CellDetailsViewController
+        vc.brand = brands[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return brands.count
@@ -51,7 +56,6 @@ class MainFlowViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.nameOfBrandLabel.text = brands[indexPath.row].name
         cell.imageOfBrand.image = UIImage(named: brands[indexPath.row].brandImage)
         cell.countryOfBrandLabel.text = brands[indexPath.row].country
-        cell.backgroundColor = UIColor.systemBrown
         return cell
     }
 }

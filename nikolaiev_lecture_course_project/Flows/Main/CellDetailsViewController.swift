@@ -11,20 +11,24 @@ import UIKit
 
 class CellDetailsViewController: UIViewController {
     
-    var imageInDetails: Brand?
+    var brand: Brand? = nil
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var brandImage: UIImageView!
-    @IBOutlet weak var countryOfBrandLabel: UILabel!
-    @IBOutlet weak var yearOfEstablishmentLabel: UILabel!
-    @IBOutlet weak var headquatersLabel: UILabel!
-    @IBOutlet weak var lastYearSalesNumbersLabel: UILabel!
-    @IBOutlet weak var currentModelsLabel: UILabel!
-    @IBOutlet weak var currentModelsTextView: UITextView!
-    @IBOutlet var textFields: [UITextField]!
+    @IBOutlet weak private var scrollView: UIScrollView!
+    @IBOutlet weak private var brandImage: UIImageView!
+    @IBOutlet weak private var brandLabel: UILabel!
+    @IBOutlet weak private var yearOfEstablishmentLabel: UILabel!
+    @IBOutlet weak private var headquatersLabel: UILabel!
+    @IBOutlet weak private var lastYearSalesNumbersLabel: UILabel!
+    @IBOutlet weak private var currentModelsLabel: UILabel!
+    @IBOutlet weak private var currentModelsTextView: UITextView!
+    @IBOutlet private var textFields: [UITextField]!
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let resultBrand = brand {
+            brandImage.image = UIImage(named: resultBrand.brandImage)
+            brandLabel.text = resultBrand.name
+        }
     }
     
     
