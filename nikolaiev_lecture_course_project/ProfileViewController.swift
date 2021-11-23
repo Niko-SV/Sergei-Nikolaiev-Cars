@@ -30,7 +30,7 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectedView(type: EditModeType.view)
+        viewSelected(type: EditModeType.view)
         hideKeyboardWhenTappedAround()
         NotificationCenter.default.addObserver(self, selector: #selector(ProfileViewController.keyboardDidShow),name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ProfileViewController.keyboardWillBeHidden),
@@ -42,17 +42,17 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func editButton(_ sender: UIButton) {
-        selectedView(type: EditModeType.edit)
+        viewSelected(type: EditModeType.edit)
         saveButton.isEnabled = false
         agreementSwitch.isOn = false
         textFields[0].becomeFirstResponder()
     }
     
     @IBAction func saveButton(_ sender: UIButton) {
-        selectedView(type: EditModeType.view)
+        viewSelected(type: EditModeType.view)
     }
     
-    private func selectedView(type: EditModeType){
+    private func viewSelected(type: EditModeType) {
         let isEditMode = type == EditModeType.edit
         textFields.forEach({$0.isEnabled = isEditMode})
         editButton.isHidden = isEditMode
