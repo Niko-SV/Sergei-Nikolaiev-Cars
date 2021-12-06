@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0204D53227552B0400BFC446 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204D53127552B0400BFC446 /* CollectionViewCell.swift */; };
 		02260163274BCA9100471BB7 /* BrandsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02260162274BCA9100471BB7 /* BrandsModel.swift */; };
+		025E31AB275E8E3B00402DA5 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025E31AA275E8E3B00402DA5 /* Car.swift */; };
 		02BC62D3274BA2E700D5BF66 /* CellDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC62D2274BA2E700D5BF66 /* CellDetailsViewController.swift */; };
 		02BEA8D52744ECBB00339D91 /* MainDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BEA8D42744ECBB00339D91 /* MainDetailsViewController.swift */; };
 		02BEA8D82744F0EE00339D91 /* AuthFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BEA8D72744F0EE00339D91 /* AuthFlowViewController.swift */; };
@@ -31,7 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0204D53127552B0400BFC446 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		02260162274BCA9100471BB7 /* BrandsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsModel.swift; sourceTree = "<group>"; };
+		025E31AA275E8E3B00402DA5 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		02BC62D2274BA2E700D5BF66 /* CellDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDetailsViewController.swift; sourceTree = "<group>"; };
 		02BEA8D42744ECBB00339D91 /* MainDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailsViewController.swift; sourceTree = "<group>"; };
 		02BEA8D72744F0EE00339D91 /* AuthFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				02D2109527445960001AC554 /* TopFlowViewController.swift */,
+				0204D53127552B0400BFC446 /* CollectionViewCell.swift */,
 				02D2109727445967001AC554 /* TopFlow.storyboard */,
 			);
 			path = Top;
@@ -149,6 +154,7 @@
 			children = (
 				49BA10C2273327250067504C /* AppDelegate.swift */,
 				02BEA8E12745979400339D91 /* DefaultKeys.swift */,
+				025E31AA275E8E3B00402DA5 /* Car.swift */,
 				02260162274BCA9100471BB7 /* BrandsModel.swift */,
 				49BA10C4273327250067504C /* SceneDelegate.swift */,
 				02D2108F2744592E001AC554 /* Main */,
@@ -240,6 +246,7 @@
 				02D2109627445960001AC554 /* TopFlowViewController.swift in Sources */,
 				02BC62D3274BA2E700D5BF66 /* CellDetailsViewController.swift in Sources */,
 				49BA10C7273327250067504C /* ProfileFlowViewController.swift in Sources */,
+				0204D53227552B0400BFC446 /* CollectionViewCell.swift in Sources */,
 				02BEA8DC2744F10200339D91 /* SignUpViewController.swift in Sources */,
 				02BEA8D52744ECBB00339D91 /* MainDetailsViewController.swift in Sources */,
 				02260163274BCA9100471BB7 /* BrandsModel.swift in Sources */,
@@ -248,6 +255,7 @@
 				02BEA8DA2744F0F800339D91 /* SignInViewController.swift in Sources */,
 				02D2109E274459E9001AC554 /* MainViewController.swift in Sources */,
 				49BA10C3273327250067504C /* AppDelegate.swift in Sources */,
+				025E31AB275E8E3B00402DA5 /* Car.swift in Sources */,
 				49BA10C5273327250067504C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
