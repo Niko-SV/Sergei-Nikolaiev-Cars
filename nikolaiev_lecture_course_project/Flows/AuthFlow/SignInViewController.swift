@@ -21,11 +21,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     weak var activeField: UITextField?
     
     @IBAction func onTextChange(_ sender: Any){
-        if (passwordTextField.hasText && passwordTextField.text!.count >= 1 && emailTextField.hasText && emailTextField.text!.count >= 1) {
-            animateButton(alpha: 1)
-            signInButton.isEnabled = true
+        if (passwordTextField.hasText && emailTextField.hasText) {
+            if !signInButton.isUserInteractionEnabled {
+                animateButton(alpha: 1)
+                signInButton.isUserInteractionEnabled = true
+            }
         } else {
-            animateButton(alpha: 0.5)
+            signInButton.alpha = 0.5
             signInButton.isUserInteractionEnabled = false
         }
     }
@@ -83,12 +85,14 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             self.signInButton.isUserInteractionEnabled = true
         }
         
-        //signInButton.transform = .init(scaleX: 1.05, y: 1.2)
         UIView.animate(withDuration: 0.5,
                        delay: 0.1,
-                       options: [.curveEaseInOut, .autoreverse, .repeat]) { [weak self] in
-            self?.signInButton.transform = .identity
+                       options: [.curveEaseInOut, .autoreverse]) { [weak self] in
+            self?.signInButton.transform = .init(scaleX: 1.12, y: 1.12)
+        } completion: { _ in
+            self.signInButton.transform = .identity
         }
+        
     }
     
     private func hideKeyboardWhenTappedAround() {
