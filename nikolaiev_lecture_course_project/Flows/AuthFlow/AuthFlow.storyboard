@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XMA-de-7eF">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -15,14 +15,14 @@
             <objects>
                 <viewController storyboardIdentifier="auth_vc" modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="AuthFlowViewController" customModule="nikolaiev_lecture_course_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="f0C-f4-HRg">
-                                <rect key="frame" x="20" y="398.5" width="374" height="99"/>
+                                <rect key="frame" x="20" y="284" width="335" height="99"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iri-H1-Nne">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="44"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="Pp8-fx-s6V"/>
@@ -35,7 +35,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fo-rL-bZs">
-                                        <rect key="frame" x="0.0" y="55" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="55" width="335" height="44"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="gra-Tb-2hg"/>
@@ -70,39 +70,41 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="Jw5-Gd-RBo" customClass="SignInViewController" customModule="nikolaiev_lecture_course_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gxx-Rh-SGB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYN-9Y-3ig">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OR7-YS-QZa" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="336"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFd-sm-68u">
-                                                <rect key="frame" x="10" y="138" width="394" height="40"/>
+                                                <rect key="frame" x="10" y="50" width="355" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="fLg-X1-7Bm"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
+                                                    <action selector="onTextChange:" destination="Jw5-Gd-RBo" eventType="editingChanged" id="Y1s-Ex-Ezh"/>
                                                     <outlet property="delegate" destination="Jw5-Gd-RBo" id="kG3-2H-ZGj"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4oq-bg-dot">
-                                                <rect key="frame" x="10" y="188" width="394" height="40"/>
+                                                <rect key="frame" x="10" y="100" width="355" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Djy-oL-Ji9"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
+                                                    <action selector="onTextChange:" destination="Jw5-Gd-RBo" eventType="editingChanged" id="Z9c-LU-nWG"/>
                                                     <outlet property="delegate" destination="Jw5-Gd-RBo" id="bH2-XR-aes"/>
                                                 </connections>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhR-c5-biV">
-                                                <rect key="frame" x="10" y="678" width="394" height="44"/>
+                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhR-c5-biV">
+                                                <rect key="frame" x="10" y="240" width="355" height="44"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="aJj-MN-mHd"/>
@@ -120,8 +122,8 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="4oq-bg-dot" firstAttribute="leading" secondItem="OR7-YS-QZa" secondAttribute="leading" constant="10" id="HTB-1I-U1d"/>
-                                            <constraint firstItem="jhR-c5-biV" firstAttribute="top" secondItem="4oq-bg-dot" secondAttribute="bottom" constant="450" id="I6t-if-EoL"/>
-                                            <constraint firstItem="aFd-sm-68u" firstAttribute="top" secondItem="OR7-YS-QZa" secondAttribute="top" constant="138" id="XVm-Gj-uGz"/>
+                                            <constraint firstItem="jhR-c5-biV" firstAttribute="top" secondItem="4oq-bg-dot" secondAttribute="bottom" constant="100" id="I6t-if-EoL"/>
+                                            <constraint firstItem="aFd-sm-68u" firstAttribute="top" secondItem="OR7-YS-QZa" secondAttribute="top" constant="50" id="XVm-Gj-uGz"/>
                                             <constraint firstItem="jhR-c5-biV" firstAttribute="leading" secondItem="OR7-YS-QZa" secondAttribute="leading" constant="10" id="Z39-dR-rRr"/>
                                             <constraint firstItem="4oq-bg-dot" firstAttribute="top" secondItem="aFd-sm-68u" secondAttribute="bottom" constant="10" id="Z3c-N1-zlA"/>
                                             <constraint firstItem="aFd-sm-68u" firstAttribute="leading" secondItem="OR7-YS-QZa" secondAttribute="leading" constant="10" id="bOO-Ej-sQL"/>
@@ -157,6 +159,7 @@
                         <outlet property="emailTextField" destination="aFd-sm-68u" id="AB8-Gg-K8Y"/>
                         <outlet property="passwordTextField" destination="4oq-bg-dot" id="f6Y-WE-1JS"/>
                         <outlet property="scrollView" destination="FYN-9Y-3ig" id="NXz-Iy-1DK"/>
+                        <outlet property="signInButton" destination="jhR-c5-biV" id="yhy-sS-9ia"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8X-qS-Nn2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -169,7 +172,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XMA-de-7eF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zvo-J2-Tpy">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -186,17 +189,17 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="Bo6-MR-17P" customClass="SignUpViewController" customModule="nikolaiev_lecture_course_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="44j-Hz-cFt">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nWR-Pn-QqZ">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddn-uc-69e" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="782"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="358"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SbH-av-WUg">
-                                                <rect key="frame" x="10" y="138" width="394" height="44"/>
+                                                <rect key="frame" x="10" y="50" width="355" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="YwS-qL-R3H"/>
                                                 </constraints>
@@ -207,7 +210,7 @@
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eIf-yG-Vmp">
-                                                <rect key="frame" x="10" y="192" width="394" height="44"/>
+                                                <rect key="frame" x="10" y="104" width="355" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="mP9-IA-erF"/>
                                                 </constraints>
@@ -217,8 +220,8 @@
                                                     <outlet property="delegate" destination="Bo6-MR-17P" id="5Ia-XN-3Kd"/>
                                                 </connections>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUr-pJ-Zkz">
-                                                <rect key="frame" x="10" y="686" width="394" height="44"/>
+                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUr-pJ-Zkz">
+                                                <rect key="frame" x="10" y="262" width="355" height="44"/>
                                                 <color key="backgroundColor" name="AccentColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="gfZ-bQ-yA2"/>
@@ -233,7 +236,7 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GXO-6K-rTv">
-                                                <rect key="frame" x="10" y="246" width="394" height="44"/>
+                                                <rect key="frame" x="10" y="158" width="355" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="wja-Ic-STq"/>
                                                 </constraints>
@@ -253,8 +256,8 @@
                                             <constraint firstItem="SbH-av-WUg" firstAttribute="leading" secondItem="ddn-uc-69e" secondAttribute="leading" constant="10" id="CK3-j2-Dfz"/>
                                             <constraint firstAttribute="trailing" secondItem="GXO-6K-rTv" secondAttribute="trailing" constant="10" id="CVY-HR-4dm"/>
                                             <constraint firstItem="eIf-yG-Vmp" firstAttribute="top" secondItem="SbH-av-WUg" secondAttribute="bottom" constant="10" id="D7R-Dd-wrR"/>
-                                            <constraint firstItem="SbH-av-WUg" firstAttribute="top" secondItem="ddn-uc-69e" secondAttribute="top" constant="138" id="HrO-NH-jEN"/>
-                                            <constraint firstItem="MUr-pJ-Zkz" firstAttribute="top" secondItem="GXO-6K-rTv" secondAttribute="bottom" constant="396" id="LG3-Ly-VTp"/>
+                                            <constraint firstItem="SbH-av-WUg" firstAttribute="top" secondItem="ddn-uc-69e" secondAttribute="top" constant="50" id="HrO-NH-jEN"/>
+                                            <constraint firstItem="MUr-pJ-Zkz" firstAttribute="top" secondItem="GXO-6K-rTv" secondAttribute="bottom" constant="60" id="LG3-Ly-VTp"/>
                                             <constraint firstAttribute="trailing" secondItem="eIf-yG-Vmp" secondAttribute="trailing" constant="10" id="VZ0-dF-p2h"/>
                                             <constraint firstItem="eIf-yG-Vmp" firstAttribute="leading" secondItem="ddn-uc-69e" secondAttribute="leading" constant="10" id="ldW-om-Ob7"/>
                                             <constraint firstAttribute="bottom" secondItem="MUr-pJ-Zkz" secondAttribute="bottom" constant="52" id="vV0-67-JT9"/>
@@ -288,6 +291,7 @@
                         <outlet property="emailTextField" destination="SbH-av-WUg" id="zb9-BN-cpf"/>
                         <outlet property="passwordTextField" destination="eIf-yG-Vmp" id="Sn4-J5-1Nh"/>
                         <outlet property="scrollView" destination="nWR-Pn-QqZ" id="1Ab-rX-KjW"/>
+                        <outlet property="signUpButton" destination="MUr-pJ-Zkz" id="TPl-vb-4aZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4T-wU-R0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -306,7 +310,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EoB-Aw-Ptl"/>
+        <segue reference="RBx-xl-j2R"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">

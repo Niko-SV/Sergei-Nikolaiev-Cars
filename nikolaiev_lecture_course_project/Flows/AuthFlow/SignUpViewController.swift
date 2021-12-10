@@ -12,6 +12,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
     
     @IBAction func signUpButton(_ sender: UIButton) {
         UserDefaults.standard.set(true, forKey: DefaultKeys.userLoggedIn)
