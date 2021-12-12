@@ -95,7 +95,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    private func hideKeyboardWhenTappedAround() {
+    func hideKeyboardWhenTappedAround() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         self.view.addGestureRecognizer(tap)
     }
@@ -103,7 +103,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         activeField = textField

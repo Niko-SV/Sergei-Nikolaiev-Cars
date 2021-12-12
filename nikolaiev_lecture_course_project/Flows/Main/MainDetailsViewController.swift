@@ -9,7 +9,6 @@ import UIKit
 
 class MainDetailsViewController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    
 }
+
