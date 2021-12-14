@@ -7,8 +7,6 @@
 
 import UIKit
 
-import UIKit
-
 class CellDetailsViewController: UIViewController {
     
     var brand: Brand? = nil
@@ -26,7 +24,7 @@ class CellDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let resultBrand = brand {
-            brandImage.image = UIImage(named: resultBrand.brandImage)
+//            img_url.image = UIImage(named: resultBrand.img_url)
             brandLabel.text = resultBrand.name
         }
     }

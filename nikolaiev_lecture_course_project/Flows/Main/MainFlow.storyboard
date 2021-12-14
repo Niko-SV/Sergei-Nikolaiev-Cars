@@ -44,31 +44,18 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykw-xS-oSd">
-                                                    <rect key="frame" x="95" y="54" width="265" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="u5f-Xb-zNj"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="H0Z-DE-vus" firstAttribute="leading" secondItem="izF-Do-58H" secondAttribute="leading" constant="15" id="7hj-5r-s1G"/>
                                                 <constraint firstItem="hL1-ow-0a5" firstAttribute="top" secondItem="izF-Do-58H" secondAttribute="top" constant="9" id="FMs-L4-fuc"/>
-                                                <constraint firstAttribute="bottom" secondItem="Ykw-xS-oSd" secondAttribute="bottom" constant="10" id="IKp-lQ-aoe"/>
-                                                <constraint firstAttribute="trailing" secondItem="Ykw-xS-oSd" secondAttribute="trailing" constant="15" id="QL1-tu-7wK"/>
                                                 <constraint firstAttribute="trailing" secondItem="hL1-ow-0a5" secondAttribute="trailing" constant="15" id="R7F-bd-WaG"/>
                                                 <constraint firstItem="hL1-ow-0a5" firstAttribute="leading" secondItem="H0Z-DE-vus" secondAttribute="trailing" constant="15" id="WAN-pz-xUS"/>
                                                 <constraint firstItem="H0Z-DE-vus" firstAttribute="centerY" secondItem="izF-Do-58H" secondAttribute="centerY" id="cCB-CH-y8l"/>
-                                                <constraint firstItem="Ykw-xS-oSd" firstAttribute="leading" secondItem="H0Z-DE-vus" secondAttribute="trailing" constant="15" id="wyN-uz-cib"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="countryOfBrandLabel" destination="Ykw-xS-oSd" id="Wh9-ry-5At"/>
                                             <outlet property="imageOfBrand" destination="H0Z-DE-vus" id="s3W-rB-6b9"/>
                                             <outlet property="nameOfBrandLabel" destination="hL1-ow-0a5" id="hRz-Wz-uKb"/>
                                         </connections>

@@ -7,29 +7,61 @@
 
 import UIKit
 
-class MainFlowViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainFlowViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var brands = Brand.getBrands(cardBrands: Brand.carBrands)
-    var currentBrand: Brand? = nil
+    private var brands = [Brand]()
     
-    let myRefreshControl: UIRefreshControl = {
+    let refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
         return refreshControl
     }()
     
     @IBOutlet weak private var table: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let moveToDetailsBarButton = UIBarButtonItem(title: "Details", style: .done, target: self, action: #selector(moveToDetails))
         self.navigationItem.rightBarButtonItem = moveToDetailsBarButton
         
-        table.refreshControl = myRefreshControl
+        table.refreshControl = refreshControl
+        fetchData()
+    }
+    
+    func fetchData() {
+        
+        let jsonURLString = "https://private-anon-2b662ec671-carsapi1.apiary-mock.com/manufacturers"
+        guard let url = URL(string: jsonURLString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else { return }
+            
+            do {
+                self.brands = try JSONDecoder().decode([Brand].self, from: data)
+                
+                DispatchQueue.main.async {
+                    self.table.reloadData()
+                }
+            } catch let error{
+                print("Error serialization json", error)
+            }
+            
+        }.resume()
+    }
+    
+    private func configureCell(cell: CustomTableViewCell, for indexPath: IndexPath) {
+    
+        let brand = brands[indexPath.row]
+        cell.nameOfBrandLabel.text = brand.name
+        
+        guard let imageURL = URL(string: brand.img_url!) else { return }
+        guard let imageData = try? Data(contentsOf: imageURL) else { return }
+        cell.imageOfBrand.image = UIImage(data: imageData)
     }
     
     @objc private func refresh(sender: UIRefreshControl) {
-        brands += brands
+               brands += brands
         table.reloadData()
         sender.endRefreshing()
     }
@@ -50,12 +82,9 @@ class MainFlowViewController: UIViewController, UITableViewDataSource, UITableVi
         return brands.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableViewCell
-        
-        cell.nameOfBrandLabel.text = brands[indexPath.row].name
-        cell.imageOfBrand.image = UIImage(named: brands[indexPath.row].brandImage)
-        cell.countryOfBrandLabel.text = brands[indexPath.row].country
+        configureCell(cell: cell, for: indexPath)
         return cell
     }
 }
