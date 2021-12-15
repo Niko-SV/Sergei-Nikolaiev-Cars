@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Car {
+struct Car: Decodable {
+    
     var name: String
     var imageName: String
 }

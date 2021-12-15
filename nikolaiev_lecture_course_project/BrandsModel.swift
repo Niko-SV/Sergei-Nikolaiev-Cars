@@ -6,14 +6,13 @@
 //
 
 import UIKit
-
 struct Brand: Decodable {
     
-    let num_models: Int
-    let img_url: String?
-    let max_car_id: Int
-    let id: Int
-    let name: String
-    let avg_horsepower: Double
-    let avg_price: Double
+    var numModels: Int?
+    var imgUrl: String?
+    var maxCarId: Int?
+    var id: Int?
+    var name: String?
+    var avgHorsepower: Double?
+    var avgPrice: Double?
 }

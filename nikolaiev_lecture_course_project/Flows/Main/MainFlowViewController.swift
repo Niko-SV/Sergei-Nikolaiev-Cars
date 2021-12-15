@@ -29,8 +29,10 @@ class MainFlowViewController: UIViewController, UITableViewDelegate, UITableView
         fetchData()
     }
     
+    
+    
     func fetchData() {
-        
+                
         let jsonURLString = "https://private-anon-2b662ec671-carsapi1.apiary-mock.com/manufacturers"
         guard let url = URL(string: jsonURLString) else { return }
         
@@ -38,7 +40,10 @@ class MainFlowViewController: UIViewController, UITableViewDelegate, UITableView
             guard let data = data else { return }
             
             do {
-                self.brands = try JSONDecoder().decode([Brand].self, from: data)
+                let decoder = JSONDecoder()
+                
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                self.brands = try decoder.decode([Brand].self, from: data)
                 
                 DispatchQueue.main.async {
                     self.table.reloadData()
@@ -52,12 +57,18 @@ class MainFlowViewController: UIViewController, UITableViewDelegate, UITableView
     
     private func configureCell(cell: CustomTableViewCell, for indexPath: IndexPath) {
     
+   
         let brand = brands[indexPath.row]
-        cell.nameOfBrandLabel.text = brand.name
-        
-        guard let imageURL = URL(string: brand.img_url!) else { return }
-        guard let imageData = try? Data(contentsOf: imageURL) else { return }
+        cell.nameOfBrandLabel.text = brand.name?.capitalized
+        cell.averageHorsepowerLabel.text = "Average horsepower - \(Int(brand.avgHorsepower!))"
+        let firstURL = brand.imgUrl!.replacingOccurrences(of: "http", with: "https")
+        let secondURL = firstURL.replacingOccurrences(of: "-1.jpg", with: ".png")
+        let correctURL = secondURL.replacingOccurrences(of: "uploads/car-logos", with: "logo")
+    
+        guard let imageData = try? Data(contentsOf:  URL(string: correctURL)!) else { return }
+
         cell.imageOfBrand.image = UIImage(data: imageData)
+        
     }
     
     @objc private func refresh(sender: UIRefreshControl) {
