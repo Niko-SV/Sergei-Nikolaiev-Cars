@@ -6,58 +6,15 @@
 //
 
 import UIKit
+import Kingfisher
 
-class TopFlowViewController: UICollectionViewController {
+final class TopFlowViewController: UICollectionViewController {
     
     private let reuseIdentefier = "cell"
     let numberOfRows: CGFloat = 4
+    let jsonURLString = "https://private-anon-95f6b9361a-carsapi1.apiary-mock.com/cars"
+    private var cars = [Car]()
     
-    private let cars = [
-        Car(name: "AudiA4", imageName: "AudiA4"),
-        Car(name: "AudiA7", imageName: "AudiA7"),
-        Car(name: "AudiQ3", imageName: "AudiQ3"),
-        Car(name: "AudiQ8", imageName: "AudiQ8"),
-        Car(name: "VolkswagenBeetle", imageName: "VolkswagenBeetle"),
-        Car(name: "VolkswagenGolf", imageName: "VolkswagenGolf"),
-        Car(name: "VolkswagenJetta", imageName: "VolkswagenJetta"),
-        Car(name: "VolkswagenPassat", imageName: "VolkswagenPassat"),
-        Car(name: "VolkswagenTouareg", imageName: "VolkswagenTouareg"),
-        Car(name: "BMW1", imageName: "BMW1"),
-        Car(name: "BMWi8", imageName: "BMWi8"),
-        Car(name: "BMWX5", imageName: "BMWX5"),
-        Car(name: "BMWM5", imageName: "BMWM5"),
-        Car(name: "Fiat500", imageName: "Fiat500"),
-        Car(name: "Fiat500x", imageName: "Fiat500x"),
-        Car(name: "FiatTipo", imageName: "FiatTipo"),
-        Car(name: "FordEscape", imageName: "FordEscape"),
-        Car(name: "FordFiesta", imageName: "FordFiesta"),
-        Car(name: "FordFocuc", imageName: "FordFocus"),
-        Car(name: "HondaAccord", imageName: "HondaAccord"),
-        Car(name: "HondaCivic", imageName: "HondaCivic"),
-        Car(name: "HondaCRV", imageName: "HondaCRV"),
-        Car(name: "MercedesA", imageName: "MercedesA"),
-        Car(name: "MercedesGLA", imageName: "MercedesGLA"),
-        Car(name: "MercedesS", imageName: "MercedesS"),
-        Car(name: "MercedesML", imageName: "MercedesML"),
-        Car(name: "MiniCooper", imageName: "MiniCooper"),
-        Car(name: "MiniCountryman", imageName: "MiniCountryman"),
-        Car(name: "MitsubishiLancer", imageName: "MitsubishiLancer"),
-        Car(name: "MitsubishiOutlander", imageName: "MitsubishiOutlander"),
-        Car(name: "MitsubishiPajero", imageName: "MitsubishiPajero"),
-        Car(name: "NissanSkyline", imageName: "NissanSkyline"),
-        Car(name: "NissanXTrail", imageName: "NissanXTrail"),
-        Car(name: "Peugeot107", imageName: "Peugeot107"),
-        Car(name: "Peugeot208", imageName: "Peugeot208"),
-        Car(name: "Peugeot3008", imageName: "Peugeot3008"),
-        Car(name: "SkodaFabia", imageName: "SkodaFabia"),
-        Car(name: "SkodaOctavia", imageName: "SkodaOctavia"),
-        Car(name: "SmartForfour", imageName: "SmartForfour"),
-        Car(name: "SmartFortwo", imageName: "SmartFortwo"),
-        Car(name: "ToyotaCamry", imageName: "ToyotaCamry"),
-        Car(name: "ToyotaPrado", imageName: "ToyotaPrado"),
-        Car(name: "ToyotaCorolla", imageName: "ToyotaCorolla"),
-    ]
-   
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -65,7 +22,33 @@ class TopFlowViewController: UICollectionViewController {
             let horizontalSpacing = flowLayout.scrollDirection == .vertical ? flowLayout.minimumInteritemSpacing : flowLayout.minimumLineSpacing
             let cellHeight = (collectionView.frame.height - max(0, numberOfRows)*horizontalSpacing)/(numberOfRows + 1)
             flowLayout.itemSize = CGSize(width: cellHeight, height: cellHeight)
+            
         }
+        
+        fetchData()
+    }
+    
+    func fetchData() {
+        
+        guard let url = URL(string: jsonURLString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else { return }
+            
+            do {
+                let decoder = JSONDecoder()
+                
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                self.cars = try decoder.decode([Car].self, from: data)
+                
+                DispatchQueue.main.async {
+                    self.collectionView?.reloadData()
+                }
+            } catch let error{
+                print("Error serialization json", error)
+            }
+            
+        }.resume()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -74,8 +57,8 @@ class TopFlowViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentefier, for: indexPath) as! CollectionViewCell
-        let currentCat = cars[indexPath.row]
-        cell.setupSell(with: currentCat)
+        let currentCar = cars[indexPath.row]
+        cell.setupCell(with: currentCar)
         return cell
     }
 }

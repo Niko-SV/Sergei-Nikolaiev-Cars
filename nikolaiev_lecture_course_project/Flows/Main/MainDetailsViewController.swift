@@ -9,6 +9,5 @@ import UIKit
 
 class MainDetailsViewController: UIViewController {
     
-    
 }
 

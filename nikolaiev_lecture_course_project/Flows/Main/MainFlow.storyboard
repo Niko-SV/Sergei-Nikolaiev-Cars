@@ -142,7 +142,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ep7-RB-VCc">
                                                         <rect key="frame" x="0.0" y="203" width="359" height="63.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year Of Establishment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdD-72-XRU">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdD-72-XRU">
                                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
@@ -174,7 +174,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bfz-tq-VsY">
                                                         <rect key="frame" x="0.0" y="274.5" width="359" height="63.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Headquaters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtK-3n-LXs">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GtK-3n-LXs">
                                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
@@ -200,7 +200,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fxR-Ad-W26">
                                                         <rect key="frame" x="0.0" y="346" width="359" height="63.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Year Sales Numbers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6Z-GV-leG">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average horsepower" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6Z-GV-leG">
                                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
@@ -226,7 +226,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zvh-tK-fzb">
                                                         <rect key="frame" x="0.0" y="417.5" width="359" height="80"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Models" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywo-Xx-xGC">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite Models" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywo-Xx-xGC">
                                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="22"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
@@ -291,17 +291,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="aaT-Uo-X2M"/>
                     <connections>
+                        <outlet property="averageHorsepowerLabel" destination="Q6Z-GV-leG" id="02V-aw-3NC"/>
+                        <outlet property="averageHorsepowerTextField" destination="3bM-pB-TUm" id="vym-lN-Qhn"/>
+                        <outlet property="averagePriceLabel" destination="GtK-3n-LXs" id="RXH-b1-BHb"/>
+                        <outlet property="averagePriceTextField" destination="xfp-jY-8Xq" id="7X9-CV-Bcb"/>
+                        <outlet property="brandDetailsView" destination="Gu1-sp-Pmq" id="oLR-Up-Oqg"/>
                         <outlet property="brandImage" destination="YIa-bU-FAM" id="vbI-fO-oLX"/>
                         <outlet property="brandLabel" destination="9RC-Z3-71B" id="S38-MW-IDH"/>
-                        <outlet property="currentModelsLabel" destination="ywo-Xx-xGC" id="6zX-3N-ww3"/>
-                        <outlet property="currentModelsTextView" destination="srL-hy-BXH" id="JLI-Uu-6LP"/>
-                        <outlet property="headquatersLabel" destination="GtK-3n-LXs" id="CmH-y5-eNf"/>
-                        <outlet property="lastYearSalesNumbersLabel" destination="Q6Z-GV-leG" id="mSe-re-9IB"/>
+                        <outlet property="favoriteModelsTextView" destination="srL-hy-BXH" id="Ukh-YF-Plh"/>
+                        <outlet property="idLabel" destination="zdD-72-XRU" id="pnw-Nd-dRI"/>
+                        <outlet property="idTextField" destination="Lw0-CL-vhN" id="dYa-mJ-jEj"/>
                         <outlet property="scrollView" destination="6rD-8p-x0p" id="tfb-32-ub8"/>
-                        <outlet property="yearOfEstablishmentLabel" destination="zdD-72-XRU" id="ZIR-WC-PYs"/>
-                        <outletCollection property="textFields" destination="Lw0-CL-vhN" collectionClass="NSMutableArray" id="lAr-WX-hdw"/>
-                        <outletCollection property="textFields" destination="xfp-jY-8Xq" collectionClass="NSMutableArray" id="8fo-S1-kuY"/>
-                        <outletCollection property="textFields" destination="3bM-pB-TUm" collectionClass="NSMutableArray" id="Hzu-oZ-Li2"/>
+                        <outlet property="view" destination="Gu1-sp-Pmq" id="Boh-Ij-zRa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7b-Ug-tkg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

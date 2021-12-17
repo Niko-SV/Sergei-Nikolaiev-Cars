@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MainFlowViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private var brands = [Brand]()
+    
+    let jsonURLString = "https://private-anon-2b662ec671-carsapi1.apiary-mock.com/manufacturers"
     
     let refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -29,11 +32,8 @@ class MainFlowViewController: UIViewController, UITableViewDelegate, UITableView
         fetchData()
     }
     
-    
-    
     func fetchData() {
-                
-        let jsonURLString = "https://private-anon-2b662ec671-carsapi1.apiary-mock.com/manufacturers"
+        
         guard let url = URL(string: jsonURLString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -56,23 +56,15 @@ class MainFlowViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     private func configureCell(cell: CustomTableViewCell, for indexPath: IndexPath) {
-    
-   
-        let brand = brands[indexPath.row]
+        let brand = self.brands[indexPath.row]
         cell.nameOfBrandLabel.text = brand.name?.capitalized
-        cell.averageHorsepowerLabel.text = "Average horsepower - \(Int(brand.avgHorsepower!))"
-        let firstURL = brand.imgUrl!.replacingOccurrences(of: "http", with: "https")
-        let secondURL = firstURL.replacingOccurrences(of: "-1.jpg", with: ".png")
-        let correctURL = secondURL.replacingOccurrences(of: "uploads/car-logos", with: "logo")
-    
-        guard let imageData = try? Data(contentsOf:  URL(string: correctURL)!) else { return }
-
-        cell.imageOfBrand.image = UIImage(data: imageData)
-        
+        cell.averageHorsepowerLabel.text = "Average horsepower - \(Int(brand.avgHorsepower ?? 0))"
+        let url = URL(string: brand.correctUrl ?? "")
+        cell.imageOfBrand.kf.setImage(with: url)
     }
     
     @objc private func refresh(sender: UIRefreshControl) {
-               brands += brands
+        brands += brands
         table.reloadData()
         sender.endRefreshing()
     }
@@ -84,7 +76,7 @@ class MainFlowViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "MainFlow", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "CellDetailsViewController") as! CellDetailsViewController
-        vc.brand = brands[indexPath.row]
+        vc.id =  brands[indexPath.row].id
         self.navigationController?.pushViewController(vc, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }

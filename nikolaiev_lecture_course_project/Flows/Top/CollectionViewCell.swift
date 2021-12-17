@@ -6,14 +6,20 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CollectionViewCell: UICollectionViewCell {
+    
+    var car: Car? = nil
     
     @IBOutlet weak var carLabel: UILabel!
     @IBOutlet weak var carImageView: UIImageView!
     
-    func setupSell(with car: Car) {
-        self.carImageView.image = UIImage(named: car.imageName)
-        self.carLabel.text = car.name
+    
+    func setupCell(with car: Car) {
+        let url = URL(string: car.correctUrl ?? "")
+        self.carImageView.kf.setImage(with: url)
+        self.carLabel.text = "\(car.make?.capitalized ?? "") \(car.model?.capitalized ?? " ")" 
     }
 }
+
