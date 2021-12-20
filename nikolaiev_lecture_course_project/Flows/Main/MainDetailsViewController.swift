@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainDetailsViewController: UIViewController {
+final class MainDetailsViewController: UIViewController {
     
 }
 

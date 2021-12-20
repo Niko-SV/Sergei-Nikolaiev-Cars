@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileFlowViewController: UIViewController, UITextFieldDelegate{
+final class ProfileFlowViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var topImage: UIImageView!

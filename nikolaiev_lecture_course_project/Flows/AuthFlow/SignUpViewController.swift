@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class SignUpViewController: UIViewController, UITextFieldDelegate {
+final class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var emailTextField: UITextField!

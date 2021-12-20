@@ -32,8 +32,7 @@ final class CellDetailsViewController: UIViewController {
     
     var brand: Brand? = nil
     var id: Int? = nil
-    var main = MainFlowViewController()
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
@@ -42,7 +41,7 @@ final class CellDetailsViewController: UIViewController {
 
     func fetchData() {
         
-        guard let url = URL(string: main.jsonURLString) else { return }
+        guard let url = URL(string: Constants.manufacturesJsonURLString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }

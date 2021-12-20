@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class SignInViewController: UIViewController, UITextFieldDelegate {
+final class SignInViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var scrollView: UIScrollView!

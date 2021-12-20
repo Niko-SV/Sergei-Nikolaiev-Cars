@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class CollectionViewCell: UICollectionViewCell {
+final class CollectionViewCell: UICollectionViewCell {
     
     var car: Car? = nil
     

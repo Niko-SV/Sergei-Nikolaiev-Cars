@@ -12,7 +12,6 @@ final class TopFlowViewController: UICollectionViewController {
     
     private let reuseIdentefier = "cell"
     let numberOfRows: CGFloat = 4
-    let jsonURLString = "https://private-anon-95f6b9361a-carsapi1.apiary-mock.com/cars"
     private var cars = [Car]()
     
     override func viewDidLoad() {
@@ -30,7 +29,7 @@ final class TopFlowViewController: UICollectionViewController {
     
     func fetchData() {
         
-        guard let url = URL(string: jsonURLString) else { return }
+        guard let url = URL(string: Constants.carsJsonURLString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }

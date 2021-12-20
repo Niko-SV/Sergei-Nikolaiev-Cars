@@ -10,6 +10,7 @@
 		0204D53227552B0400BFC446 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204D53127552B0400BFC446 /* CollectionViewCell.swift */; };
 		02260163274BCA9100471BB7 /* BrandsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02260162274BCA9100471BB7 /* BrandsModel.swift */; };
 		025E31AB275E8E3B00402DA5 /* CarsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025E31AA275E8E3B00402DA5 /* CarsModel.swift */; };
+		0272FD10276D368F00980E9E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272FD0F276D368F00980E9E /* Constants.swift */; };
 		02BC62D3274BA2E700D5BF66 /* CellDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC62D2274BA2E700D5BF66 /* CellDetailsViewController.swift */; };
 		02BEA8D52744ECBB00339D91 /* MainDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BEA8D42744ECBB00339D91 /* MainDetailsViewController.swift */; };
 		02BEA8D82744F0EE00339D91 /* AuthFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BEA8D72744F0EE00339D91 /* AuthFlowViewController.swift */; };
@@ -37,6 +38,7 @@
 		0204D53127552B0400BFC446 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		02260162274BCA9100471BB7 /* BrandsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsModel.swift; sourceTree = "<group>"; };
 		025E31AA275E8E3B00402DA5 /* CarsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsModel.swift; sourceTree = "<group>"; };
+		0272FD0F276D368F00980E9E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		02BC62D2274BA2E700D5BF66 /* CellDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDetailsViewController.swift; sourceTree = "<group>"; };
 		02BEA8D42744ECBB00339D91 /* MainDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailsViewController.swift; sourceTree = "<group>"; };
 		02BEA8D72744F0EE00339D91 /* AuthFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				49BA10C2273327250067504C /* AppDelegate.swift */,
 				49BA10C4273327250067504C /* SceneDelegate.swift */,
 				02BEA8E12745979400339D91 /* DefaultKeys.swift */,
+				0272FD0F276D368F00980E9E /* Constants.swift */,
 				025E31AA275E8E3B00402DA5 /* CarsModel.swift */,
 				02260162274BCA9100471BB7 /* BrandsModel.swift */,
 				02D2108F2744592E001AC554 /* Main */,
@@ -310,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02BEA8D82744F0EE00339D91 /* AuthFlowViewController.swift in Sources */,
+				0272FD10276D368F00980E9E /* Constants.swift in Sources */,
 				02D2109A274459D5001AC554 /* MainFlowViewController.swift in Sources */,
 				02D2109627445960001AC554 /* TopFlowViewController.swift in Sources */,
 				02BC62D3274BA2E700D5BF66 /* CellDetailsViewController.swift in Sources */,

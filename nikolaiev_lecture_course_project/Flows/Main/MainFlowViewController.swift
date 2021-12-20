@@ -8,11 +8,9 @@
 import UIKit
 import Kingfisher
 
-class MainFlowViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+final class MainFlowViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private var brands = [Brand]()
-    
-    let jsonURLString = "https://private-anon-2b662ec671-carsapi1.apiary-mock.com/manufacturers"
     
     let refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -34,7 +32,7 @@ class MainFlowViewController: UIViewController, UITableViewDelegate, UITableView
     
     func fetchData() {
         
-        guard let url = URL(string: jsonURLString) else { return }
+        guard let url = URL(string: Constants.manufacturesJsonURLString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
