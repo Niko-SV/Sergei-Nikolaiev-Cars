@@ -17,7 +17,7 @@ final class CollectionViewCell: UICollectionViewCell {
     
     
     func setupCell(with car: Car) {
-        let url = URL(string: car.correctUrl ?? "")
+        let url = URL(string: car.imgUrl ?? "")
         self.carImageView.kf.setImage(with: url)
         self.carLabel.text = "\(car.make?.capitalized ?? "") \(car.model?.capitalized ?? " ")" 
     }

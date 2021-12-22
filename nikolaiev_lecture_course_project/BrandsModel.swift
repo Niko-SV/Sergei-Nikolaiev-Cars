@@ -9,13 +9,6 @@ import Foundation
 
 struct Brand: Decodable {
     
-    var correctUrl: String? {
-        let finalURL = imgUrl!.replacingOccurrences(of: "http", with: "https")
-            .replacingOccurrences(of: "-1.jpg", with: ".png")
-            .replacingOccurrences(of: "uploads/car-logos", with: "logo")
-        return finalURL
-    }
-    
     var numModels: Int?
     var imgUrl: String?
     var maxCarId: Int?
@@ -32,6 +25,9 @@ struct Brand: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         numModels = try container.decode(Int.self, forKey: .numModels)
         imgUrl = try container.decode(String.self, forKey: .imgUrl)
+        imgUrl = imgUrl?.replacingOccurrences(of: "http", with: "https")
+            .replacingOccurrences(of: "-1.jpg", with: ".png")
+            .replacingOccurrences(of: "uploads/car-logos", with: "logo")
         maxCarId = try container.decode(Int.self, forKey: .maxCarId)
         id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
@@ -39,3 +35,4 @@ struct Brand: Decodable {
         avgPrice = try container.decode(Double.self, forKey: .avgPrice)
     }
 }
+

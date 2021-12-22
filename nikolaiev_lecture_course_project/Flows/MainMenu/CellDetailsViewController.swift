@@ -7,8 +7,9 @@
 
 import UIKit
 import Kingfisher
+import CoreData
 
-final class CellDetailsViewController: UIViewController {
+final class CellDetailsViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var brandImage: UIImageView!
@@ -27,51 +28,43 @@ final class CellDetailsViewController: UIViewController {
         idTextField.isUserInteractionEnabled = false
         averageHorsepowerTextField.isUserInteractionEnabled = false
         averagePriceTextField.isUserInteractionEnabled = false
-
     }
     
-    var brand: Brand? = nil
-    var id: Int? = nil
+    private let manager = CoreDataManager.shared
+    var brand: NSManagedObject? = nil
+    var id: Int?
+    var name: String?
+    var imgUrl: String?
+    var avgHorsepower: Double?
+    var avgPrice: Double?
+    var favoriteModels: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
-        editingTextFields()
-    }
-
-    func fetchData() {
-        
-        guard let url = URL(string: Constants.manufacturesJsonURLString) else { return }
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else { return }
-            
-            do {
-                let decoder = JSONDecoder()
-                
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let brands = try decoder.decode([Brand].self, from: data)
-                self.brand = brands.filter{ $0.id == self.id }.first
-               
-                DispatchQueue.main.async {
-                    if let result = self.brand {
-                        self.setupBrandDetailsScreen(with: result)
-                    }
-                }
-            } catch let error{
-                print("Error serialization json", error)
-            }
-            
-        }.resume()
+        favoriteModelsTextView.delegate = self
+        if let result = brand {
+            id = Int(result.value(forKeyPath: "id") as! Int32)
+            name = result.value(forKeyPath: "name") as! String?
+            imgUrl = result.value(forKeyPath: "imgUrl") as! String?
+            avgHorsepower = result.value(forKeyPath: "avgHorsepower") as! Double?
+            avgPrice = result.value(forKeyPath: "avgPrice") as! Double?
+            favoriteModels = result.value(forKeyPath: "favoriteModels") as! String?
+            self.setupBrandDetailsScreen(with: result)
+        }
     }
     
-    func setupBrandDetailsScreen(with brand: Brand) {
-        let url = URL(string: brand.correctUrl ?? "")
+    func textViewDidChange(_ textView: UITextView) {
+        brand?.setValue(textView.text, forKey: "favoriteModels")
+        manager.saveMainContext()
+     }
+    
+    func setupBrandDetailsScreen(with brand: NSManagedObject) {
+        let url = URL(string: imgUrl ?? "")
         self.brandImage.kf.setImage(with: url)
-        self.brandLabel.text = brand.name?.capitalized
-        self.idTextField.text = String(describing: brand.id!)
-        self.averagePriceTextField.text = String(format: "%.2f", brand.avgPrice!) + " $"
-        self.averageHorsepowerTextField.text = String(describing: Int(brand.avgHorsepower!))
+        self.brandLabel.text = name?.capitalized
+        self.idTextField.text = String(describing: id!)
+        self.averagePriceTextField.text = String(format: "%.2f", avgPrice!) + " $"
+        self.averageHorsepowerTextField.text = String(describing: Int(avgHorsepower!))
+        self.favoriteModelsTextView.text = favoriteModels
     }
-
 }

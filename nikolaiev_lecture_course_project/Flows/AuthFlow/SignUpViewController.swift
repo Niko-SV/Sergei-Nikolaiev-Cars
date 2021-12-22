@@ -108,21 +108,21 @@ final class SignUpViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if let placeholder = textField.placeholder {
-            UserDefaults.standard.set(textField.text, forKey: placeholder)
-        }
-        activeField = nil
-    }
-    
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        activeField = textField
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        if let placeholder = textField.placeholder {
+//            UserDefaults.standard.set(textField.text, forKey: placeholder)
+//        }
+//        activeField = nil
+//    }
+//    
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        activeField = textField
+//    }
+//    
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
     
     @objc func keyboardDidShow(notification: Notification) {
         let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue

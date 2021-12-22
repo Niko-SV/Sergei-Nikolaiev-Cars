@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0204D53227552B0400BFC446 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0204D53127552B0400BFC446 /* CollectionViewCell.swift */; };
+		0209546B2773576200547FD5 /* nikolaiev_lecture_course_project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 020954692773576200547FD5 /* nikolaiev_lecture_course_project.xcdatamodeld */; };
+		0209546F2773585600547FD5 /* Brands+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0209546D2773585600547FD5 /* Brands+CoreDataProperties.swift */; };
+		020954702773585600547FD5 /* Brands+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0209546E2773585600547FD5 /* Brands+CoreDataClass.swift */; };
+		0209547227735A1000547FD5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0209547127735A1000547FD5 /* CoreDataManager.swift */; };
 		02260163274BCA9100471BB7 /* BrandsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02260162274BCA9100471BB7 /* BrandsModel.swift */; };
 		025E31AB275E8E3B00402DA5 /* CarsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025E31AA275E8E3B00402DA5 /* CarsModel.swift */; };
 		0272FD10276D368F00980E9E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272FD0F276D368F00980E9E /* Constants.swift */; };
@@ -36,6 +40,10 @@
 
 /* Begin PBXFileReference section */
 		0204D53127552B0400BFC446 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		0209546A2773576200547FD5 /* nikolaiev_lecture_course_project.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = nikolaiev_lecture_course_project.xcdatamodel; sourceTree = "<group>"; };
+		0209546D2773585600547FD5 /* Brands+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Brands+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0209546E2773585600547FD5 /* Brands+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Brands+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0209547127735A1000547FD5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		02260162274BCA9100471BB7 /* BrandsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsModel.swift; sourceTree = "<group>"; };
 		025E31AA275E8E3B00402DA5 /* CarsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsModel.swift; sourceTree = "<group>"; };
 		0272FD0F276D368F00980E9E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -78,6 +86,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0209546C2773583900547FD5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0209546E2773585600547FD5 /* Brands+CoreDataClass.swift */,
+				0209546D2773585600547FD5 /* Brands+CoreDataProperties.swift */,
+				0209547127735A1000547FD5 /* CoreDataManager.swift */,
+				020954692773576200547FD5 /* nikolaiev_lecture_course_project.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		02BEA8D62744F0E100339D91 /* AuthFlow */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +187,7 @@
 				0272FD0F276D368F00980E9E /* Constants.swift */,
 				025E31AA275E8E3B00402DA5 /* CarsModel.swift */,
 				02260162274BCA9100471BB7 /* BrandsModel.swift */,
+				0209546C2773583900547FD5 /* CoreData */,
 				02D2109127445941001AC554 /* Flows */,
 				49BA10CB273327260067504C /* Assets.xcassets */,
 				49BA10CD273327260067504C /* LaunchScreen.storyboard */,
@@ -316,13 +336,17 @@
 				0272FD10276D368F00980E9E /* Constants.swift in Sources */,
 				02D2109A274459D5001AC554 /* MainMenuViewController.swift in Sources */,
 				02D2109627445960001AC554 /* TopViewController.swift in Sources */,
+				0209546B2773576200547FD5 /* nikolaiev_lecture_course_project.xcdatamodeld in Sources */,
 				02BC62D3274BA2E700D5BF66 /* CellDetailsViewController.swift in Sources */,
 				49BA10C7273327250067504C /* ProfileViewController.swift in Sources */,
 				0204D53227552B0400BFC446 /* CollectionViewCell.swift in Sources */,
 				02BEA8DC2744F10200339D91 /* SignUpViewController.swift in Sources */,
 				02BEA8D52744ECBB00339D91 /* MainDetailsViewController.swift in Sources */,
 				02260163274BCA9100471BB7 /* BrandsModel.swift in Sources */,
+				020954702773585600547FD5 /* Brands+CoreDataClass.swift in Sources */,
+				0209547227735A1000547FD5 /* CoreDataManager.swift in Sources */,
 				02C2AA0A2747BC0000004222 /* CustomTableViewCell.swift in Sources */,
+				0209546F2773585600547FD5 /* Brands+CoreDataProperties.swift in Sources */,
 				02BEA8E22745979400339D91 /* DefaultKeys.swift in Sources */,
 				02BEA8DA2744F0F800339D91 /* SignInViewController.swift in Sources */,
 				02D2109E274459E9001AC554 /* MainViewController.swift in Sources */,
@@ -552,6 +576,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		020954692773576200547FD5 /* nikolaiev_lecture_course_project.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0209546A2773576200547FD5 /* nikolaiev_lecture_course_project.xcdatamodel */,
+			);
+			currentVersion = 0209546A2773576200547FD5 /* nikolaiev_lecture_course_project.xcdatamodel */;
+			path = nikolaiev_lecture_course_project.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 49BA10B7273327250067504C /* Project object */;
 }

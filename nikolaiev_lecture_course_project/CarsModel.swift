@@ -16,9 +16,6 @@ struct Car: Decodable {
     var model: String?
     var price: Int?
     var imgUrl: String?
-    var correctUrl: String?{
-        return self.imgUrl?.replacingOccurrences(of: "http", with: "https")
-    }
     
     private enum CodingKeys: String, CodingKey {
         case year, horsepower, make, id, model, imgUrl, price
@@ -32,6 +29,8 @@ struct Car: Decodable {
         id = try container.decode(Int.self, forKey: .id)
         model = try container.decode(String.self, forKey: .model)
         imgUrl = try container.decode(String.self, forKey: .imgUrl)
+        imgUrl = imgUrl?.replacingOccurrences(of: "http", with: "https")
+        
         price = try container.decode(Int.self, forKey: .price)
     }
 }

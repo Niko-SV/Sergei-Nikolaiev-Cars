@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 final class ProfileViewController: UIViewController, UITextFieldDelegate {
     
@@ -17,7 +18,7 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak private var editButton: UIButton!
     @IBOutlet weak private var saveButton: UIButton!
     @IBOutlet weak private var agreementSwitch: UISwitch!
-        
+    
     weak var activeField: UITextField?
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -54,14 +55,14 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
         saveButton.isEnabled = sender.isOn
     }
     
-    @IBAction func editButton(_ sender: UIButton) {
+    @IBAction func editButton(_ : UIButton) {
         viewSelected(type: EditModeType.edit)
         saveButton.isEnabled = false
         agreementSwitch.isOn = false
         textFields[0].becomeFirstResponder()
     }
     
-    @IBAction func saveButton(_ sender: UIButton) {
+    @IBAction func saveButton(_ : UIButton) {
         viewSelected(type: EditModeType.view)
     }
     
@@ -79,7 +80,7 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
                     UserDefaults.standard.removeObject(forKey: placeholder)
                 }
             })
-    
+            
             self.performSegue(withIdentifier: "logoutSegue", sender: nil)
         }))
         alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: nil))
