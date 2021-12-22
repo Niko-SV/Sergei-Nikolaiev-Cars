@@ -12,7 +12,7 @@
         <!--Profile-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ProfileFlowViewController" customModule="nikolaiev_lecture_course_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ProfileViewController" customModule="nikolaiev_lecture_course_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,7 +161,7 @@
                     <navigationItem key="navigationItem" title="Profile" id="N31-bt-oB5">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="uxf-wK-lNL">
                             <connections>
-                                <action selector="logoutButton:" destination="BYZ-38-t0r" id="un4-cw-wKO"/>
+                                <action selector="logoutButtonTapped:" destination="BYZ-38-t0r" id="tOH-iN-w31"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -177,7 +177,7 @@
                         <outletCollection property="textFields" destination="9nh-6Q-OnP" collectionClass="NSMutableArray" id="Cmx-gS-IOO"/>
                         <outletCollection property="textFields" destination="Ts2-3d-9Q6" collectionClass="NSMutableArray" id="Z8o-wU-tuW"/>
                         <outletCollection property="textFields" destination="bMu-ui-o8r" collectionClass="NSMutableArray" id="lSl-J9-0Kj"/>
-                        <segue destination="qjs-7F-PAg" kind="show" identifier="logoutSegue" animates="NO" id="d35-nu-xaZ"/>
+                        <segue destination="qjs-7F-PAg" kind="presentation" identifier="logoutSegue" animates="NO" id="d35-nu-xaZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

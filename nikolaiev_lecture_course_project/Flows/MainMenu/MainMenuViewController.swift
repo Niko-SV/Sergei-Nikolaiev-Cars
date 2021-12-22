@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-final class MainFlowViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+final class MainMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private var brands = [Brand]()
     
@@ -23,8 +23,8 @@ final class MainFlowViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let moveToDetailsBarButton = UIBarButtonItem(title: "Details", style: .done, target: self, action: #selector(moveToDetails))
-        self.navigationItem.rightBarButtonItem = moveToDetailsBarButton
+        let showDetailsBarButton = UIBarButtonItem(title: "Details", style: .done, target: self, action: #selector(showDetails))
+        self.navigationItem.rightBarButtonItem = showDetailsBarButton
         
         table.refreshControl = refreshControl
         fetchData()
@@ -67,12 +67,12 @@ final class MainFlowViewController: UIViewController, UITableViewDelegate, UITab
         sender.endRefreshing()
     }
     
-    @objc func moveToDetails() {
-        self.performSegue(withIdentifier: "moveToDetails", sender: self)
+    @objc private func showDetails() {
+        self.performSegue(withIdentifier: "showDetails", sender: self)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "MainFlow", bundle: nil)
+        let storyboard = UIStoryboard(name: "MainMenu", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "CellDetailsViewController") as! CellDetailsViewController
         vc.id =  brands[indexPath.row].id
         self.navigationController?.pushViewController(vc, animated: true)

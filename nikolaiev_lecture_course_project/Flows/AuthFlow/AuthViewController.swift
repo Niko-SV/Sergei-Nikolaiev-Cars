@@ -6,9 +6,6 @@
 //
 import UIKit
 
-final class AuthFlowViewController: UIViewController {
+final class AuthViewController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 }

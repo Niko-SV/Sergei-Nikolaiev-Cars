@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Authentification-->
+        <!--Welcome-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="auth_vc" modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="AuthFlowViewController" customModule="nikolaiev_lecture_course_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="auth_vc" modalPresentationStyle="fullScreen" id="Y6W-OH-hqX" customClass="AuthViewController" customModule="nikolaiev_lecture_course_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,7 +59,7 @@
                             <constraint firstItem="f0C-f4-HRg" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="SgG-ye-WgC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Authentification" id="IGY-vY-Kw7"/>
+                    <navigationItem key="navigationItem" title="Welcome" id="IGY-vY-Kw7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,8 +113,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Sign In"/>
                                                 <connections>
-                                                    <action selector="signInButton:" destination="Jw5-Gd-RBo" eventType="touchUpInside" id="4dv-va-Fv8"/>
-                                                    <action selector="signUpButton:" destination="Bo6-MR-17P" eventType="touchUpInside" id="KzO-tc-fkA"/>
+                                                    <action selector="signInButtonTapped:" destination="Jw5-Gd-RBo" eventType="touchUpInside" id="R67-hp-nNN"/>
                                                     <segue destination="9eU-mj-iu8" kind="showDetail" id="RBx-xl-j2R"/>
                                                 </connections>
                                             </button>
@@ -233,7 +232,7 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="Sign Up"/>
                                                 <connections>
                                                     <action selector="signInButton:" destination="Jw5-Gd-RBo" eventType="touchUpInside" id="cLJ-to-V93"/>
-                                                    <action selector="signUpButton:" destination="Bo6-MR-17P" eventType="touchUpInside" id="gNO-Ne-1yV"/>
+                                                    <action selector="signUpButtonTapped:" destination="Bo6-MR-17P" eventType="touchUpInside" id="Csd-2F-Znt"/>
                                                     <segue destination="9eU-mj-iu8" kind="showDetail" id="EoB-Aw-Ptl"/>
                                                 </connections>
                                             </button>

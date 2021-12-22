@@ -14,8 +14,8 @@ final class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     
-    @IBAction func signUpButton(_ sender: UIButton) {
-        UserDefaults.standard.set(true, forKey: DefaultKeys.userLoggedIn)
+    @IBAction func signUpButtonTapped(_ : UIButton) {
+        UserDefaults.standard.set(true, forKey: DefaultsKeys.userLoggedIn)
     }
     
     @IBAction func onTextChange(_ sender: Any){

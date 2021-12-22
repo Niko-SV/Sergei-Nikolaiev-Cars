@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct DefaultKeys {
+struct DefaultsKeys {
     static let userLoggedIn = "userLoggedInKey"
 }

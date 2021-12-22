@@ -14,8 +14,8 @@ final class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     
-    @IBAction func signInButton(_ sender: UIButton) {
-        UserDefaults.standard.set(true, forKey: DefaultKeys.userLoggedIn)
+    @IBAction func signInButtonTapped(_ : UIButton) {
+        UserDefaults.standard.set(true, forKey: DefaultsKeys.userLoggedIn)
     }
     
     weak var activeField: UITextField?

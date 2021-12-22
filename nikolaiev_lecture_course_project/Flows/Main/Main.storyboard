@@ -7,30 +7,30 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MainFlow-->
+        <!--MainMenu-->
         <scene sceneID="Te7-eH-Z8a">
             <objects>
-                <viewControllerPlaceholder storyboardName="MainFlow" id="s36-NG-0DA" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="MainMenu" id="s36-NG-0DA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Main" image="tray" catalog="system" selectedImage="tray" id="U6H-sU-non"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jom-PC-xMj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-991" y="-289"/>
         </scene>
-        <!--TopFlow-->
+        <!--Top-->
         <scene sceneID="r9R-6g-R63">
             <objects>
-                <viewControllerPlaceholder storyboardName="TopFlow" id="MJu-Ex-4RZ" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Top" id="MJu-Ex-4RZ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Help" image="pencil" catalog="system" selectedImage="pencil" id="XGY-k8-oU4"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWZ-at-Ua7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-987" y="-119"/>
         </scene>
-        <!--ProfileFlow-->
+        <!--Profile-->
         <scene sceneID="biM-LQ-eYr">
             <objects>
-                <viewControllerPlaceholder storyboardName="ProfileFlow" id="ezA-vi-MZh" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Profile" id="ezA-vi-MZh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Main" image="tray" catalog="system" selectedImage="tray" id="lVS-1E-5Ba"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyy-qE-Yv9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

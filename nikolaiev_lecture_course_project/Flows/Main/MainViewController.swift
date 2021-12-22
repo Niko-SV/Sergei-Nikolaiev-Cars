@@ -7,18 +7,14 @@
 
 import UIKit
 
-class MainViewController: UITabBarController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+final class MainViewController: UITabBarController {
+  
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let isUserLoggedIn = UserDefaults.standard.bool(forKey: DefaultKeys.userLoggedIn)
-        if (!isUserLoggedIn) {
-            let storyboard = UIStoryboard(name: "AuthFlow", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "auth_vc") as! AuthFlowViewController
+        let isUserLoggedIn = UserDefaults.standard.bool(forKey: DefaultsKeys.userLoggedIn)
+        if !isUserLoggedIn {
+            let storyboard = UIStoryboard(name: "Auth", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "auth_vc") as! AuthViewController
             let navigationController = UINavigationController(rootViewController: vc)
             navigationController.isModalInPresentation = true
             present(navigationController, animated: true, completion: nil)

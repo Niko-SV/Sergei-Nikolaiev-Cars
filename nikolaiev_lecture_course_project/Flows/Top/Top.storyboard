@@ -12,7 +12,7 @@
         <!--Help-->
         <scene sceneID="OZB-do-Oif">
             <objects>
-                <collectionViewController id="s9B-i1-1g8" customClass="TopFlowViewController" customModule="nikolaiev_lecture_course_project" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="s9B-i1-1g8" customClass="TopViewController" customModule="nikolaiev_lecture_course_project" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Buf-LA-oAh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

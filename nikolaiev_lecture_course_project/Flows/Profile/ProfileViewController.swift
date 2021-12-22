@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ProfileFlowViewController: UIViewController, UITextFieldDelegate{
+final class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var topImage: UIImageView!
@@ -35,8 +35,8 @@ final class ProfileFlowViewController: UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         viewSelected(type: EditModeType.view)
         hideKeyboardWhenTappedAround()
-        NotificationCenter.default.addObserver(self, selector: #selector(ProfileFlowViewController.keyboardDidShow),name: UIResponder.keyboardDidShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ProfileFlowViewController.keyboardWillBeHidden),
+        NotificationCenter.default.addObserver(self, selector: #selector(ProfileViewController.keyboardDidShow),name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ProfileViewController.keyboardWillBeHidden),
                                                name: UIResponder.keyboardWillHideNotification, object: nil)
         
         textFields.forEach({
@@ -46,7 +46,7 @@ final class ProfileFlowViewController: UIViewController, UITextFieldDelegate{
         })
     }
     
-    deinit{
+    deinit {
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -66,14 +66,14 @@ final class ProfileFlowViewController: UIViewController, UITextFieldDelegate{
     }
     
     
-    @IBAction func logoutButton(_ sender: UIBarButtonItem) {
+    @IBAction func logoutButtonTapped(_ : UIBarButtonItem) {
         showAlert()
     }
     
-    func showAlert() {
+    private func showAlert() {
         let alert = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Yes",style: UIAlertAction.Style.destructive, handler: {_ in
-            UserDefaults.standard.set(false, forKey: DefaultKeys.userLoggedIn)
+            UserDefaults.standard.set(false, forKey: DefaultsKeys.userLoggedIn)
             self.textFields.forEach({
                 if let placeholder = $0.placeholder {
                     UserDefaults.standard.removeObject(forKey: placeholder)

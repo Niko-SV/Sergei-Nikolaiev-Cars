@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-final class TopFlowViewController: UICollectionViewController {
+final class TopViewController: UICollectionViewController {
     
     private let reuseIdentefier = "cell"
     let numberOfRows: CGFloat = 4
