@@ -103,7 +103,7 @@ final class MainMenuViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     @objc private func showDetails() {
-        self.performSegue(withIdentifier: "showDetails", sender: self)
+        self.performSegue(withIdentifier: "moveToDetails", sender: self)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

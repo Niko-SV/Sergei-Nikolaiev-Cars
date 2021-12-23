@@ -114,7 +114,6 @@
                                                 <buttonConfiguration key="configuration" style="filled" title="Sign In"/>
                                                 <connections>
                                                     <action selector="signInButtonTapped:" destination="Jw5-Gd-RBo" eventType="touchUpInside" id="R67-hp-nNN"/>
-                                                    <segue destination="9eU-mj-iu8" kind="showDetail" id="RBx-xl-j2R"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -135,8 +134,8 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="OR7-YS-QZa" firstAttribute="top" secondItem="CVR-Q8-vZM" secondAttribute="top" id="C3S-hg-bHm"/>
-                                    <constraint firstItem="OR7-YS-QZa" firstAttribute="width" secondItem="CVR-Q8-vZM" secondAttribute="width" id="Lfl-CD-EkG"/>
-                                    <constraint firstItem="OR7-YS-QZa" firstAttribute="trailing" secondItem="jvZ-F8-tKr" secondAttribute="trailing" id="SoL-Ey-Pd3"/>
+                                    <constraint firstItem="OR7-YS-QZa" firstAttribute="width" secondItem="jvZ-F8-tKr" secondAttribute="width" id="Lfl-CD-EkG"/>
+                                    <constraint firstItem="OR7-YS-QZa" firstAttribute="trailing" secondItem="CVR-Q8-vZM" secondAttribute="trailing" id="SoL-Ey-Pd3"/>
                                     <constraint firstItem="OR7-YS-QZa" firstAttribute="leading" secondItem="CVR-Q8-vZM" secondAttribute="leading" id="aS2-0g-YpE"/>
                                     <constraint firstItem="OR7-YS-QZa" firstAttribute="bottom" secondItem="CVR-Q8-vZM" secondAttribute="bottom" id="gsl-hK-nsl"/>
                                 </constraints>
@@ -159,6 +158,7 @@
                         <outlet property="passwordTextField" destination="4oq-bg-dot" id="f6Y-WE-1JS"/>
                         <outlet property="scrollView" destination="FYN-9Y-3ig" id="NXz-Iy-1DK"/>
                         <outlet property="signInButton" destination="jhR-c5-biV" id="yhy-sS-9ia"/>
+                        <segue destination="9eU-mj-iu8" kind="presentation" identifier="signInSegue" modalPresentationStyle="fullScreen" id="R9c-iu-Kim"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8X-qS-Nn2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -233,7 +233,6 @@
                                                 <connections>
                                                     <action selector="signInButton:" destination="Jw5-Gd-RBo" eventType="touchUpInside" id="cLJ-to-V93"/>
                                                     <action selector="signUpButtonTapped:" destination="Bo6-MR-17P" eventType="touchUpInside" id="Csd-2F-Znt"/>
-                                                    <segue destination="9eU-mj-iu8" kind="showDetail" id="EoB-Aw-Ptl"/>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GXO-6K-rTv">
@@ -268,8 +267,8 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="ddn-uc-69e" firstAttribute="width" secondItem="hfn-HP-C1t" secondAttribute="width" id="0cN-p4-Uk8"/>
-                                    <constraint firstItem="ddn-uc-69e" firstAttribute="trailing" secondItem="m2d-0J-45Z" secondAttribute="trailing" id="89j-L0-xI0"/>
+                                    <constraint firstItem="ddn-uc-69e" firstAttribute="width" secondItem="m2d-0J-45Z" secondAttribute="width" id="0cN-p4-Uk8"/>
+                                    <constraint firstItem="ddn-uc-69e" firstAttribute="trailing" secondItem="hfn-HP-C1t" secondAttribute="trailing" id="89j-L0-xI0"/>
                                     <constraint firstItem="ddn-uc-69e" firstAttribute="bottom" secondItem="hfn-HP-C1t" secondAttribute="bottom" id="KVW-aP-Eff"/>
                                     <constraint firstItem="ddn-uc-69e" firstAttribute="leading" secondItem="hfn-HP-C1t" secondAttribute="leading" id="ZET-aD-6tm"/>
                                     <constraint firstItem="ddn-uc-69e" firstAttribute="top" secondItem="hfn-HP-C1t" secondAttribute="top" id="zaP-Lj-zgo"/>
@@ -294,6 +293,7 @@
                         <outlet property="passwordTextField" destination="eIf-yG-Vmp" id="Sn4-J5-1Nh"/>
                         <outlet property="scrollView" destination="nWR-Pn-QqZ" id="1Ab-rX-KjW"/>
                         <outlet property="signUpButton" destination="MUr-pJ-Zkz" id="TPl-vb-4aZ"/>
+                        <segue destination="9eU-mj-iu8" kind="presentation" identifier="signUpSegue" modalPresentationStyle="fullScreen" id="XKJ-4F-iSn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4T-wU-R0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -312,7 +312,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EoB-Aw-Ptl"/>
+        <segue reference="R9c-iu-Kim"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">

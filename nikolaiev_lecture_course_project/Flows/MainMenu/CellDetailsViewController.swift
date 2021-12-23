@@ -50,8 +50,12 @@ final class CellDetailsViewController: UIViewController, UITextViewDelegate {
             avgPrice = result.value(forKeyPath: "avgPrice") as! Double?
             favoriteModels = result.value(forKeyPath: "favoriteModels") as! String?
             self.setupBrandDetailsScreen(with: result)
+            
+            editingTextFields()
         }
     }
+    
+    weak var activeField: UITextField?
     
     func textViewDidChange(_ textView: UITextView) {
         brand?.setValue(textView.text, forKey: "favoriteModels")

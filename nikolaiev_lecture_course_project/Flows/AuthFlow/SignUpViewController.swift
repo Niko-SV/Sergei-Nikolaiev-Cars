@@ -5,8 +5,11 @@
 //  Created by NikoS on 17.11.2021.
 //
 import UIKit
+import KeychainAccess
 
 final class SignUpViewController: UIViewController, UITextFieldDelegate {
+    
+    weak var activeField: UITextField?
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var emailTextField: UITextField!
@@ -15,10 +18,10 @@ final class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signUpButton: UIButton!
     
     @IBAction func signUpButtonTapped(_ : UIButton) {
-        UserDefaults.standard.set(true, forKey: DefaultsKeys.userLoggedIn)
+        validatePassword()
     }
     
-    @IBAction func onTextChange(_ sender: Any){
+    @IBAction func onTextChange(_ : Any){
         if (passwordTextField.hasText && emailTextField.hasText && confirmPasswordTextField.hasText) {
             if !signUpButton.isUserInteractionEnabled {
                 animateButton(alpha: 1)
@@ -30,7 +33,26 @@ final class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    weak var activeField: UITextField?
+    func validatePassword() {
+        if passwordTextField.text! != confirmPasswordTextField.text! {
+            showError(message: "Passwords don't match")
+        } else {
+            do {
+                UserDefaults.standard.set(true, forKey: DefaultsKeys.userLoggedIn)
+                try SecureStorage().put(object: passwordTextField.text!, for: emailTextField.text!)
+                self.performSegue(withIdentifier: "signUpSegue", sender: self)
+            } catch {
+                showError(message: "Your credentials not saved")
+            }
+        }
+    }
+    
+    func showError(message: String) {
+        let alertController = UIAlertController(title: "Error", message: message , preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(defaultAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,6 +121,8 @@ final class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
+    
     private func hideKeyboardWhenTappedAround() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         self.view.addGestureRecognizer(tap)
@@ -108,21 +132,14 @@ final class SignUpViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        if let placeholder = textField.placeholder {
-//            UserDefaults.standard.set(textField.text, forKey: placeholder)
-//        }
-//        activeField = nil
-//    }
-//    
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        activeField = textField
-//    }
-//    
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeField = textField
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     @objc func keyboardDidShow(notification: Notification) {
         let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue

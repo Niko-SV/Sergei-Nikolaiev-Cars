@@ -15,6 +15,7 @@
 		02260163274BCA9100471BB7 /* BrandsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02260162274BCA9100471BB7 /* BrandsModel.swift */; };
 		025E31AB275E8E3B00402DA5 /* CarsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025E31AA275E8E3B00402DA5 /* CarsModel.swift */; };
 		0272FD10276D368F00980E9E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272FD0F276D368F00980E9E /* Constants.swift */; };
+		02AB9FD82774B5A800297860 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB9FD72774B5A800297860 /* SecureStorage.swift */; };
 		02BC62D3274BA2E700D5BF66 /* CellDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC62D2274BA2E700D5BF66 /* CellDetailsViewController.swift */; };
 		02BEA8D52744ECBB00339D91 /* MainDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BEA8D42744ECBB00339D91 /* MainDetailsViewController.swift */; };
 		02BEA8D82744F0EE00339D91 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BEA8D72744F0EE00339D91 /* AuthViewController.swift */; };
@@ -22,7 +23,7 @@
 		02BEA8DC2744F10200339D91 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BEA8DB2744F10200339D91 /* SignUpViewController.swift */; };
 		02BEA8DE2744F10900339D91 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02BEA8DD2744F10900339D91 /* Auth.storyboard */; };
 		02BEA8E027451EDB00339D91 /* MainMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02BEA8DF27451EDB00339D91 /* MainMenu.storyboard */; };
-		02BEA8E22745979400339D91 /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BEA8E12745979400339D91 /* DefaultKeys.swift */; };
+		02BEA8E22745979400339D91 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BEA8E12745979400339D91 /* DefaultsKeys.swift */; };
 		02C2AA0A2747BC0000004222 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C2AA092747BBFF00004222 /* CustomTableViewCell.swift */; };
 		02D2109627445960001AC554 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D2109527445960001AC554 /* TopViewController.swift */; };
 		02D2109827445967001AC554 /* Top.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D2109727445967001AC554 /* Top.storyboard */; };
@@ -47,6 +48,7 @@
 		02260162274BCA9100471BB7 /* BrandsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsModel.swift; sourceTree = "<group>"; };
 		025E31AA275E8E3B00402DA5 /* CarsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsModel.swift; sourceTree = "<group>"; };
 		0272FD0F276D368F00980E9E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		02AB9FD72774B5A800297860 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 		02BC62D2274BA2E700D5BF66 /* CellDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDetailsViewController.swift; sourceTree = "<group>"; };
 		02BEA8D42744ECBB00339D91 /* MainDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailsViewController.swift; sourceTree = "<group>"; };
 		02BEA8D72744F0EE00339D91 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +56,7 @@
 		02BEA8DB2744F10200339D91 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		02BEA8DD2744F10900339D91 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		02BEA8DF27451EDB00339D91 /* MainMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMenu.storyboard; sourceTree = "<group>"; };
-		02BEA8E12745979400339D91 /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
+		02BEA8E12745979400339D91 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 		02C2AA092747BBFF00004222 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		02D2109527445960001AC554 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		02D2109727445967001AC554 /* Top.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Top.storyboard; sourceTree = "<group>"; };
@@ -183,7 +185,8 @@
 			children = (
 				49BA10C2273327250067504C /* AppDelegate.swift */,
 				49BA10C4273327250067504C /* SceneDelegate.swift */,
-				02BEA8E12745979400339D91 /* DefaultKeys.swift */,
+				02BEA8E12745979400339D91 /* DefaultsKeys.swift */,
+				02AB9FD72774B5A800297860 /* SecureStorage.swift */,
 				0272FD0F276D368F00980E9E /* Constants.swift */,
 				025E31AA275E8E3B00402DA5 /* CarsModel.swift */,
 				02260162274BCA9100471BB7 /* BrandsModel.swift */,
@@ -332,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02AB9FD82774B5A800297860 /* SecureStorage.swift in Sources */,
 				02BEA8D82744F0EE00339D91 /* AuthViewController.swift in Sources */,
 				0272FD10276D368F00980E9E /* Constants.swift in Sources */,
 				02D2109A274459D5001AC554 /* MainMenuViewController.swift in Sources */,
@@ -347,7 +351,7 @@
 				0209547227735A1000547FD5 /* CoreDataManager.swift in Sources */,
 				02C2AA0A2747BC0000004222 /* CustomTableViewCell.swift in Sources */,
 				0209546F2773585600547FD5 /* Brands+CoreDataProperties.swift in Sources */,
-				02BEA8E22745979400339D91 /* DefaultKeys.swift in Sources */,
+				02BEA8E22745979400339D91 /* DefaultsKeys.swift in Sources */,
 				02BEA8DA2744F0F800339D91 /* SignInViewController.swift in Sources */,
 				02D2109E274459E9001AC554 /* MainViewController.swift in Sources */,
 				49BA10C3273327250067504C /* AppDelegate.swift in Sources */,

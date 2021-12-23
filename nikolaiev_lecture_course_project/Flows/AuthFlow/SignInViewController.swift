@@ -5,6 +5,7 @@
 //  Created by NikoS on 17.11.2021.
 //
 import UIKit
+import KeychainAccess
 
 final class SignInViewController: UIViewController, UITextFieldDelegate {
     
@@ -15,10 +16,31 @@ final class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signInButton: UIButton!
     
     @IBAction func signInButtonTapped(_ : UIButton) {
-        UserDefaults.standard.set(true, forKey: DefaultsKeys.userLoggedIn)
+        do {
+            let password: String? = try SecureStorage().get(key: emailTextField.text!)
+            if(password == nil) {
+                showError(message: "User does not exist")
+            } else {
+                if (password != passwordTextField.text) {
+                    showError(message: "Password not correct")
+                } else {
+                    UserDefaults.standard.set(true, forKey: DefaultsKeys.userLoggedIn)
+                    try SecureStorage().put(object: emailTextField.text!, for: SecureStorage.Keys.email)
+                    self.performSegue(withIdentifier: "signInSegue", sender: self)
+                }
+            }
+        } catch {
+            showError(message: "User does not exist")
+        }
+   
     }
     
-    weak var activeField: UITextField?
+    func showError(message: String) {
+        let alertController = UIAlertController(title: "Error", message: message , preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(defaultAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     @IBAction func onTextChange(_ sender: Any){
         if (passwordTextField.hasText && emailTextField.hasText) {
@@ -31,6 +53,7 @@ final class SignInViewController: UIViewController, UITextFieldDelegate {
             signInButton.isUserInteractionEnabled = false
         }
     }
+    weak var activeField: UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +64,6 @@ final class SignInViewController: UIViewController, UITextFieldDelegate {
         
         signInButton.isUserInteractionEnabled = false
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -104,21 +126,14 @@ final class SignInViewController: UIViewController, UITextFieldDelegate {
         view.endEditing(true)
     }
     
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        activeField = textField
-//    }
-//    
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        if let placeholder = textField.placeholder {
-//            UserDefaults.standard.set(textField.text, forKey: placeholder)
-//        }
-//        activeField = nil
-//    }
-//    
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeField = textField
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     @objc func keyboardDidShow(notification: Notification) {
         let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
