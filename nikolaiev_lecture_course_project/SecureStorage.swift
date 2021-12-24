@@ -11,7 +11,6 @@ import KeychainAccess
 final class SecureStorage {
     
     enum Keys {
-        static let password = "Password"
         static let email = "Email"
     }
     

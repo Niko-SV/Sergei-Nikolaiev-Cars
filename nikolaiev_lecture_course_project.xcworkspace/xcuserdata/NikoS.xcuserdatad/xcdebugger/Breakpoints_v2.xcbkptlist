@@ -100,5 +100,113 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BEE0FF66-CB3D-4EDD-93CF-660DBF6139D0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "nikolaiev_lecture_course_project/Flows/AuthFlow/SignInViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "SignInViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "BEE0FF66-CB3D-4EDD-93CF-660DBF6139D0 - bd04a996ba57e72"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "nikolaiev_lecture_course_project.SignInViewController.emailTextField.getter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "nikolaiev_lecture_course_project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/sergei_nikolaiev_personal_project_17/nikolaiev_lecture_course_project/Flows/AuthFlow/SignInViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "BEE0FF66-CB3D-4EDD-93CF-660DBF6139D0 - f337f3b6226a7e0e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "nikolaiev_lecture_course_project.SignInViewController.emailTextField.setter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "nikolaiev_lecture_course_project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/sergei_nikolaiev_personal_project_17/nikolaiev_lecture_course_project/Flows/AuthFlow/SignInViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "BEE0FF66-CB3D-4EDD-93CF-660DBF6139D0 - 77e02721860bf846"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "nikolaiev_lecture_course_project.SignInViewController.emailTextField.modify : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "nikolaiev_lecture_course_project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/sergei_nikolaiev_personal_project_17/nikolaiev_lecture_course_project/Flows/AuthFlow/SignInViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "BEE0FF66-CB3D-4EDD-93CF-660DBF6139D0 - bf5874bac3a5e3c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "nikolaiev_lecture_course_project.SignInViewController.emailTextField.modify : Swift.Optional&lt;__C.UITextField&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "nikolaiev_lecture_course_project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/sergei_nikolaiev_personal_project_17/nikolaiev_lecture_course_project/Flows/AuthFlow/SignInViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "BEE0FF66-CB3D-4EDD-93CF-660DBF6139D0 - e646ea3bfd6c8540"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "nikolaiev_lecture_course_project.SignInViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; nikolaiev_lecture_course_project.SignInViewController"
+                  moduleName = "nikolaiev_lecture_course_project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/sergei_nikolaiev_personal_project_17/nikolaiev_lecture_course_project/Flows/AuthFlow/SignInViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  uuid = "BEE0FF66-CB3D-4EDD-93CF-660DBF6139D0 - 628a5ec61c956531"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "nikolaiev_lecture_course_project.SignInViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;nikolaiev_lecture_course_project.SignInViewController&gt;"
+                  moduleName = "nikolaiev_lecture_course_project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Documents/sergei_nikolaiev_personal_project_17/nikolaiev_lecture_course_project/Flows/AuthFlow/SignInViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "144">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

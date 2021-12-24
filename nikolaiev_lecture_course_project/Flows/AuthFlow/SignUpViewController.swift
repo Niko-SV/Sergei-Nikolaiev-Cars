@@ -39,6 +39,7 @@ final class SignUpViewController: UIViewController, UITextFieldDelegate {
         } else {
             do {
                 UserDefaults.standard.set(true, forKey: DefaultsKeys.userLoggedIn)
+                try SecureStorage().put(object: passwordTextField.text!, for: emailTextField.text!)
                 try SecureStorage().put(object: emailTextField.text!, for: SecureStorage.Keys.email)
                 self.performSegue(withIdentifier: "signUpSegue", sender: self)
             } catch {
