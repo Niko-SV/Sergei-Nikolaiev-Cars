@@ -177,17 +177,17 @@
                         <outletCollection property="textFields" destination="9nh-6Q-OnP" collectionClass="NSMutableArray" id="Cmx-gS-IOO"/>
                         <outletCollection property="textFields" destination="Ts2-3d-9Q6" collectionClass="NSMutableArray" id="Z8o-wU-tuW"/>
                         <outletCollection property="textFields" destination="bMu-ui-o8r" collectionClass="NSMutableArray" id="lSl-J9-0Kj"/>
-                        <segue destination="qjs-7F-PAg" kind="presentation" identifier="logoutSegue" animates="NO" id="d35-nu-xaZ"/>
+                        <segue destination="qjs-7F-PAg" kind="presentation" identifier="logoutSegue" animates="NO" modalPresentationStyle="fullScreen" id="d35-nu-xaZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="937.68115942028987" y="66.964285714285708"/>
         </scene>
-        <!--Main-->
+        <!--Auth-->
         <scene sceneID="7ke-7F-Shn">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="qjs-7F-PAg" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Auth" id="qjs-7F-PAg" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="miN-bX-0e6"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UZm-ag-Oe6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

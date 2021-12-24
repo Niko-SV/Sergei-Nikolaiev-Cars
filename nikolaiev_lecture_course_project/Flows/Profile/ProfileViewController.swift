@@ -93,7 +93,6 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
                     UserDefaults.standard.removeObject(forKey: DefaultsKeys.bio)
                 }
             })
-            self.dismiss(animated: true, completion: nil)
             self.performSegue(withIdentifier: "logoutSegue", sender: nil)
         }))
         alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: nil))
