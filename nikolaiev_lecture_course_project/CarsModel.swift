@@ -14,7 +14,7 @@ struct Car: Decodable {
     var horsepower: Int?
     var make: String?
     var model: String?
-    var price: Int?
+    var price: Double?
     var imgUrl: String?
     
     private enum CodingKeys: String, CodingKey {
@@ -30,8 +30,7 @@ struct Car: Decodable {
         model = try container.decode(String.self, forKey: .model)
         imgUrl = try container.decode(String.self, forKey: .imgUrl)
         imgUrl = imgUrl?.replacingOccurrences(of: "http", with: "https")
-        
-        price = try container.decode(Int.self, forKey: .price)
+        price = try container.decode(Double.self, forKey: .price)
     }
 }
 

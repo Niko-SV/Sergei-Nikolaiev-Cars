@@ -10,6 +10,7 @@ import Kingfisher
 
 final class TopViewController: UICollectionViewController {
     
+    private var activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     private let reuseIdentefier = "cell"
     let numberOfRows: CGFloat = 4
     private var cars = [Car]()
@@ -19,11 +20,16 @@ final class TopViewController: UICollectionViewController {
 
         if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
             let horizontalSpacing = flowLayout.scrollDirection == .vertical ? flowLayout.minimumInteritemSpacing : flowLayout.minimumLineSpacing
-            let cellHeight = (collectionView.frame.height - max(0, numberOfRows)*horizontalSpacing)/(numberOfRows + 1)
+            let cellHeight = (collectionView.frame.height - max(0, numberOfRows-1)*horizontalSpacing)/(numberOfRows+2)
             flowLayout.itemSize = CGSize(width: cellHeight, height: cellHeight)
             
         }
+        activityIndicator.color = UIColor.red
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.center = view.center
+        activityIndicator.startAnimating()
         
+        view.addSubview(activityIndicator)
         fetchData()
     }
     
@@ -41,6 +47,7 @@ final class TopViewController: UICollectionViewController {
                 self.cars = try decoder.decode([Car].self, from: data)
                 
                 DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
                     self.collectionView?.reloadData()
                 }
             } catch let error{
@@ -59,6 +66,13 @@ final class TopViewController: UICollectionViewController {
         let currentCar = cars[indexPath.row]
         cell.setupCell(with: currentCar)
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Top", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CollectionViewCellDetailsController") as! CollectionViewCellDetailsController
+        vc.car = cars[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

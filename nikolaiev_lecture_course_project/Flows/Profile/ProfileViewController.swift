@@ -10,6 +10,8 @@ import CoreData
 
 final class ProfileViewController: UIViewController, UITextFieldDelegate {
     
+    private let storage = SecureStorage()
+    
     @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var topImage: UIImageView!
     @IBOutlet private var textFields: [UITextField]!
@@ -32,17 +34,7 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(ProfileViewController.keyboardDidShow),name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ProfileViewController.keyboardWillBeHidden),
                                                name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        
-        
-        
-        savedData()
-        do {
-            let storage = SecureStorage()
-            textFields[0].text = try storage.get(key: SecureStorage.Keys.email)
-        } catch {
-            
-        }
+        showSavedData()
     }
     
     deinit {
@@ -67,15 +59,15 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
         UserDefaults.standard.set(bioTextView.text?.trimmingCharacters(in: .whitespaces), forKey: DefaultsKeys.bio)
     }
     
-    func savedData() {
-        textFields.forEach({
-            if $0.text != nil {
-                textFields[1].text = UserDefaults.standard.string(forKey: DefaultsKeys.name)
-                textFields[2].text = UserDefaults.standard.string(forKey: DefaultsKeys.surname)
-                bioTextView.text = UserDefaults.standard.string(forKey: DefaultsKeys.bio) ?? "Please fill your bio here"
-            }
-        })
-        
+    func showSavedData() {
+        do {
+            textFields[0].text = try storage.get(key: SecureStorage.Keys.email)
+            textFields[1].text = UserDefaults.standard.string(forKey: DefaultsKeys.name)
+            textFields[2].text = UserDefaults.standard.string(forKey: DefaultsKeys.surname)
+            bioTextView.text = UserDefaults.standard.string(forKey: DefaultsKeys.bio) ?? "Please fill your bio here"
+        } catch {
+            print("Error: ", error)
+        }
     }
     
     @IBAction func logoutButtonTapped(_ : UIBarButtonItem) {
@@ -86,13 +78,9 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
         let alert = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Yes",style: UIAlertAction.Style.destructive, handler: {_ in
             UserDefaults.standard.set(false, forKey: DefaultsKeys.userLoggedIn)
-            self.textFields.forEach({
-                if $0.placeholder != nil {
-                    UserDefaults.standard.removeObject(forKey: DefaultsKeys.name)
-                    UserDefaults.standard.removeObject(forKey: DefaultsKeys.surname)
-                    UserDefaults.standard.removeObject(forKey: DefaultsKeys.bio)
-                }
-            })
+            UserDefaults.standard.removeObject(forKey: DefaultsKeys.name)
+            UserDefaults.standard.removeObject(forKey: DefaultsKeys.surname)
+            UserDefaults.standard.removeObject(forKey: DefaultsKeys.bio)
             self.performSegue(withIdentifier: "logoutSegue", sender: nil)
         }))
         alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.cancel, handler: nil))

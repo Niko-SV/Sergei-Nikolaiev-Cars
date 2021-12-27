@@ -47,6 +47,7 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <outlet property="mainTabBat" destination="dAA-me-5Mb" id="NTg-Dt-dAx"/>
                         <segue destination="s36-NG-0DA" kind="relationship" relationship="viewControllers" id="pHa-dL-nND"/>
                         <segue destination="MJu-Ex-4RZ" kind="relationship" relationship="viewControllers" id="U06-DR-LBc"/>
                         <segue destination="ezA-vi-MZh" kind="relationship" relationship="viewControllers" id="f5k-LU-y7u"/>

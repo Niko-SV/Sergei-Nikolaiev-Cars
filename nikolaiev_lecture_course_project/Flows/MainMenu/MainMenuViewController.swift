@@ -11,6 +11,7 @@ import CoreData
 
 final class MainMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    private var activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
     private let manager = CoreDataManager.shared
     var managedBrands: [NSManagedObject] = []
     
@@ -24,10 +25,15 @@ final class MainMenuViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.color = UIColor.red
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.center = view.center
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
         
         let showDetailsBarButton = UIBarButtonItem(title: "Details", style: .done, target: self, action: #selector(showDetails))
         self.navigationItem.rightBarButtonItem = showDetailsBarButton
-        
+      
         table.refreshControl = refreshControl
         fetchData()
         managedBrands = managedBrands.sorted(by: { ($0.value(forKeyPath: "name") as! String) < ($1.value(forKeyPath: "name") as! String)})
@@ -48,6 +54,7 @@ final class MainMenuViewController: UIViewController, UITableViewDelegate, UITab
                     self.saveBrands(brands: brands)
                     
                     DispatchQueue.main.async {
+                        self.activityIndicator.stopAnimating()
                         self.table.reloadData()
                     }
                 } catch let error{
@@ -55,6 +62,8 @@ final class MainMenuViewController: UIViewController, UITableViewDelegate, UITab
                 }
                 
             }.resume()
+        } else {
+            self.activityIndicator.stopAnimating()
         }
     }
     
