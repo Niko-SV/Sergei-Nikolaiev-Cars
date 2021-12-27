@@ -13,5 +13,4 @@ class Constants {
     static let manufacturesJsonURLString = "https://private-anon-2b662ec671-carsapi1.apiary-mock.com/manufacturers"
     static let carsJsonURLString = "https://private-anon-95f6b9361a-carsapi1.apiary-mock.com/cars"
     
-
 }

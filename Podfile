@@ -11,4 +11,8 @@ target 'nikolaiev_lecture_course_project' do
  pod 'Kingfisher'
  pod 'KeychainAccess'
 
+# Add the Firebase pod for Google Analytics
+ pod 'Firebase/Analytics'
+ pod 'Firebase/Crashlytics'
+
 end

@@ -32,6 +32,7 @@
 		02D2109A274459D5001AC554 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D21099274459D5001AC554 /* MainMenuViewController.swift */; };
 		02D2109E274459E9001AC554 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D2109D274459E9001AC554 /* MainViewController.swift */; };
 		02D210A0274459FA001AC554 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D2109F274459FA001AC554 /* Main.storyboard */; };
+		02FC8513277A511500F7C265 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02FC8512277A511500F7C265 /* GoogleService-Info.plist */; };
 		49BA10C3273327250067504C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA10C2273327250067504C /* AppDelegate.swift */; };
 		49BA10C5273327250067504C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA10C4273327250067504C /* SceneDelegate.swift */; };
 		49BA10C7273327250067504C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA10C6273327250067504C /* ProfileViewController.swift */; };
@@ -67,6 +68,7 @@
 		02D21099274459D5001AC554 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		02D2109D274459E9001AC554 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		02D2109F274459FA001AC554 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		02FC8512277A511500F7C265 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		29CF95686EF1407E15FDCE29 /* Pods-nikolaiev_lecture_course_project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nikolaiev_lecture_course_project.release.xcconfig"; path = "Target Support Files/Pods-nikolaiev_lecture_course_project/Pods-nikolaiev_lecture_course_project.release.xcconfig"; sourceTree = "<group>"; };
 		49BA10BF273327250067504C /* nikolaiev_lecture_course_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nikolaiev_lecture_course_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BA10C2273327250067504C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +169,14 @@
 			path = Top;
 			sourceTree = "<group>";
 		};
+		02FC8511277A50FD00F7C265 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				02FC8512277A511500F7C265 /* GoogleService-Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		49BA10B6273327250067504C = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +206,7 @@
 				0272FD0F276D368F00980E9E /* Constants.swift */,
 				025E31AA275E8E3B00402DA5 /* CarsModel.swift */,
 				02260162274BCA9100471BB7 /* BrandsModel.swift */,
+				02FC8511277A50FD00F7C265 /* Resources */,
 				0209546C2773583900547FD5 /* CoreData */,
 				02D2109127445941001AC554 /* Flows */,
 				49BA10CB273327260067504C /* Assets.xcassets */,
@@ -234,6 +245,7 @@
 				49BA10BC273327250067504C /* Frameworks */,
 				49BA10BD273327250067504C /* Resources */,
 				544270D9F6613CC25FA0814E /* [CP] Embed Pods Frameworks */,
+				02FC8514277A526F00F7C265 /* Crashlytics dsym uploading */,
 			);
 			buildRules = (
 			);
@@ -284,6 +296,7 @@
 			files = (
 				029D0241277A17470019EB9A /* .gitignore in Resources */,
 				02D2109827445967001AC554 /* Top.storyboard in Resources */,
+				02FC8513277A511500F7C265 /* GoogleService-Info.plist in Resources */,
 				49BA10CF273327260067504C /* LaunchScreen.storyboard in Resources */,
 				02BEA8E027451EDB00339D91 /* MainMenu.storyboard in Resources */,
 				49BA10CC273327260067504C /* Assets.xcassets in Resources */,
@@ -317,6 +330,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		02FC8514277A526F00F7C265 /* Crashlytics dsym uploading */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Crashlytics dsym uploading";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		544270D9F6613CC25FA0814E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -514,6 +545,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = Z6PLFXD39N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = nikolaiev_lecture_course_project/Info.plist;
@@ -544,6 +576,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = Z6PLFXD39N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = nikolaiev_lecture_course_project/Info.plist;
