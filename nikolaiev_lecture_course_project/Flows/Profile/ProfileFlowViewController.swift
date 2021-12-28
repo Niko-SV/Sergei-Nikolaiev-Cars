@@ -9,14 +9,14 @@ import UIKit
 
 class ProfileFlowViewController: UIViewController, UITextFieldDelegate{
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var topImage: UIImageView!
-    @IBOutlet var textFields: [UITextField]!
-    @IBOutlet weak var bioTextView: UITextView!
-    @IBOutlet weak var agreementText: UILabel!
-    @IBOutlet weak var editButton: UIButton!
-    @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var agreementSwitch: UISwitch!
+    @IBOutlet weak private var scrollView: UIScrollView!
+    @IBOutlet weak private var topImage: UIImageView!
+    @IBOutlet private var textFields: [UITextField]!
+    @IBOutlet weak private var bioTextView: UITextView!
+    @IBOutlet weak private var agreementText: UILabel!
+    @IBOutlet weak private var editButton: UIButton!
+    @IBOutlet weak private var saveButton: UIButton!
+    @IBOutlet weak private var agreementSwitch: UISwitch!
     
     weak var activeField: UITextField?
     
@@ -33,7 +33,7 @@ class ProfileFlowViewController: UIViewController, UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewSelection(type: EditModeType.view)
+        viewSelected(type: EditModeType.view)
         hideKeyboardWhenTappedAround()
         NotificationCenter.default.addObserver(self, selector: #selector(ProfileFlowViewController.keyboardDidShow),name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ProfileFlowViewController.keyboardWillBeHidden),
@@ -46,25 +46,20 @@ class ProfileFlowViewController: UIViewController, UITextFieldDelegate{
         })
     }
     
-    deinit{
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    @IBAction func agreementSwitch(_ sender: UISwitch) {
+    @IBAction func agreementSwitchValueChanged(_ sender: UISwitch) {
         saveButton.isEnabled = sender.isOn
     }
     
     @IBAction func editButton(_ sender: UIButton) {
-        viewSelection(type: EditModeType.edit)
+        viewSelected(type: EditModeType.edit)
         saveButton.isEnabled = false
         agreementSwitch.isOn = false
         textFields[0].becomeFirstResponder()
     }
     
     @IBAction func saveButton(_ sender: UIButton) {
-        viewSelection(type: EditModeType.view)
+        viewSelected(type: EditModeType.view)
     }
-    
     
     @IBAction func logoutButton(_ sender: UIBarButtonItem) {
         showAlert()
@@ -86,7 +81,7 @@ class ProfileFlowViewController: UIViewController, UITextFieldDelegate{
         self.present(alert, animated: true, completion: nil)
     }
     
-    private func viewSelection(type: EditModeType){
+    private func viewSelected(type: EditModeType) {
         let isEditMode = type == EditModeType.edit
         textFields.forEach({$0.isEnabled = isEditMode})
         editButton.isHidden = isEditMode
