@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ProfileViewController: UIViewController, UITextFieldDelegate {
+class ProfileFlowViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var topImage: UIImageView!
@@ -32,8 +32,8 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         viewSelected(type: EditModeType.view)
         hideKeyboardWhenTappedAround()
-        NotificationCenter.default.addObserver(self, selector: #selector(ProfileViewController.keyboardDidShow),name: UIResponder.keyboardDidShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ProfileViewController.keyboardWillBeHidden),
+        NotificationCenter.default.addObserver(self, selector: #selector(ProfileFlowViewController.keyboardDidShow),name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ProfileFlowViewController.keyboardWillBeHidden),
                                                name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
