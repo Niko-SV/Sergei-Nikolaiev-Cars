@@ -20,6 +20,11 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak private var editButton: UIButton!
     @IBOutlet weak private var saveButton: UIButton!
     @IBOutlet weak private var agreementSwitch: UISwitch!
+    @IBOutlet weak var lastLocationLabel: UILabel!
+    
+    @IBAction func showButtonTapped() {
+        performSegue(withIdentifier: "locationDetailsSegue", sender: self)
+    }
     
     weak var activeField: UITextField?
     
@@ -27,6 +32,17 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
         activeField = textField
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let mapDestinationVC = segue.destination as? PlaceInfoViewController {
+            mapDestinationVC.userName = textFields[1].text
+        }        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        lastLocationLabel.text = UserDefaults.standard.string(forKey: DefaultsKeys.userLastLocation)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSelected(type: EditModeType.view)

@@ -15,7 +15,6 @@ final class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var carLabel: UILabel!
     @IBOutlet weak var carImageView: UIImageView!
     
-    
     func setupCell(with car: Car) {
         let url = URL(string: car.imgUrl ?? "")
         self.carImageView.kf.setImage(with: url, placeholder: UIImage(named: "depositphotos_247872612-stock-illustration-no-image-available-icon-vector"))

@@ -122,8 +122,6 @@ final class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
-    
     private func hideKeyboardWhenTappedAround() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         self.view.addGestureRecognizer(tap)

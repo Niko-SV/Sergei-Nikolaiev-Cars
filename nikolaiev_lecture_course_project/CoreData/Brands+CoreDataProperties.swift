@@ -12,7 +12,6 @@ import CoreData
 
 extension Brands {
 
-    
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Brands> {
         return NSFetchRequest<Brands>(entityName: "Brands")
     }

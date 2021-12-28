@@ -13,21 +13,17 @@ final class SecureStorage {
     enum Keys {
         static let email = "Email"
     }
-    
-    /// A Keychain object (from KeychainAccess pod)
+
     private let keychain = Keychain(service: "nikolaiev_project")
-    
-    /// Save object of type `String` to keychain.
+
     func put(object: String, for key: String) throws {
         try keychain.set(object, key: key)
     }
-    
-    /// Get object of type `String` from keychain.
+
     func get(key: String) throws -> String? {
         try keychain.get(key)
     }
-    
-    /// Save object of type `String` to keychain with biometry protection.
+
     func saveBiometryProtected(object: String, key: String, completion: @escaping (Result<String, MyProjectError>) -> Void) {
         DispatchQueue.global().async { [weak self] in
             do {
@@ -45,8 +41,7 @@ final class SecureStorage {
             }
         }
     }
-    
-    /// Get object of type `String` from keychain with biometry protection.
+
     func fetchBiometryProtected(key: String, completion: @escaping (Result<String?, Error>) -> Void) {
         DispatchQueue.global().async { [weak self] in
             do {

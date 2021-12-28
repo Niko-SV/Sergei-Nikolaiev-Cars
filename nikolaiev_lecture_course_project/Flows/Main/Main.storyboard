@@ -21,7 +21,7 @@
         <scene sceneID="r9R-6g-R63">
             <objects>
                 <viewControllerPlaceholder storyboardName="Top" id="MJu-Ex-4RZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Help" image="pencil" catalog="system" selectedImage="pencil" id="XGY-k8-oU4"/>
+                    <tabBarItem key="tabBarItem" title="Top" image="pencil" catalog="system" selectedImage="pencil" id="XGY-k8-oU4"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWZ-at-Ua7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
