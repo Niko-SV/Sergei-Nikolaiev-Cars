@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ProfileViewController: UIViewController, UITextFieldDelegate {
+class ProfileFlowViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var topImage: UIImageView!
@@ -21,6 +21,9 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
     weak var activeField: UITextField?
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        if let placeholder = textField.placeholder {
+            UserDefaults.standard.set(textField.text, forKey: placeholder)
+        }
         activeField = nil
     }
     
@@ -32,9 +35,15 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         viewSelected(type: EditModeType.view)
         hideKeyboardWhenTappedAround()
-        NotificationCenter.default.addObserver(self, selector: #selector(ProfileViewController.keyboardDidShow),name: UIResponder.keyboardDidShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ProfileViewController.keyboardWillBeHidden),
+        NotificationCenter.default.addObserver(self, selector: #selector(ProfileFlowViewController.keyboardDidShow),name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ProfileFlowViewController.keyboardWillBeHidden),
                                                name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        textFields.forEach({
+            if let placeholder = $0.placeholder {
+                $0.text = UserDefaults.standard.string(forKey: placeholder)
+            }
+        })
     }
     
     @IBAction func agreementSwitchValueChanged(_ sender: UISwitch) {
@@ -50,6 +59,26 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func saveButton(_ sender: UIButton) {
         viewSelected(type: EditModeType.view)
+    }
+    
+    @IBAction func logoutButton(_ sender: UIBarButtonItem) {
+        showAlert()
+    }
+    
+    func showAlert() {
+        let alert = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Logout",style: UIAlertAction.Style.destructive, handler: {_ in
+            UserDefaults.standard.set(false, forKey: DefaultKeys.userLoggedIn)
+            self.textFields.forEach({
+                if let placeholder = $0.placeholder {
+                    UserDefaults.standard.removeObject(forKey: placeholder)
+                }
+            })
+    
+            self.performSegue(withIdentifier: "logoutSegue", sender: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     private func viewSelected(type: EditModeType) {
@@ -92,4 +121,5 @@ enum EditModeType {
     case edit
     case view
 }
+
 
