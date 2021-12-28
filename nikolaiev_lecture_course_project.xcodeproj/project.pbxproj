@@ -16,10 +16,11 @@
 		02260163274BCA9100471BB7 /* BrandsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02260162274BCA9100471BB7 /* BrandsModel.swift */; };
 		025E31AB275E8E3B00402DA5 /* CarsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025E31AA275E8E3B00402DA5 /* CarsModel.swift */; };
 		0272FD10276D368F00980E9E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272FD0F276D368F00980E9E /* Constants.swift */; };
+		027F0804277B91B200B5EB20 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027F0803277B91B200B5EB20 /* NetworkService.swift */; };
 		029D0241277A17470019EB9A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 029D0240277A17470019EB9A /* .gitignore */; };
 		029D0243277A23BB0019EB9A /* CollectionViewCellDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029D0242277A23BB0019EB9A /* CollectionViewCellDetailsController.swift */; };
 		02AB9FD82774B5A800297860 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB9FD72774B5A800297860 /* SecureStorage.swift */; };
-		02BC62D3274BA2E700D5BF66 /* CellDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC62D2274BA2E700D5BF66 /* CellDetailsViewController.swift */; };
+		02BC62D3274BA2E700D5BF66 /* BrandDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BC62D2274BA2E700D5BF66 /* BrandDetailsViewController.swift */; };
 		02BEA8D52744ECBB00339D91 /* MainDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BEA8D42744ECBB00339D91 /* MainDetailsViewController.swift */; };
 		02BEA8D82744F0EE00339D91 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BEA8D72744F0EE00339D91 /* AuthViewController.swift */; };
 		02BEA8DA2744F0F800339D91 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BEA8D92744F0F800339D91 /* SignInViewController.swift */; };
@@ -54,10 +55,11 @@
 		02260162274BCA9100471BB7 /* BrandsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandsModel.swift; sourceTree = "<group>"; };
 		025E31AA275E8E3B00402DA5 /* CarsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsModel.swift; sourceTree = "<group>"; };
 		0272FD0F276D368F00980E9E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		027F0803277B91B200B5EB20 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		029D0240277A17470019EB9A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		029D0242277A23BB0019EB9A /* CollectionViewCellDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellDetailsController.swift; sourceTree = "<group>"; };
 		02AB9FD72774B5A800297860 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
-		02BC62D2274BA2E700D5BF66 /* CellDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDetailsViewController.swift; sourceTree = "<group>"; };
+		02BC62D2274BA2E700D5BF66 /* BrandDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandDetailsViewController.swift; sourceTree = "<group>"; };
 		02BEA8D42744ECBB00339D91 /* MainDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailsViewController.swift; sourceTree = "<group>"; };
 		02BEA8D72744F0EE00339D91 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		02BEA8D92744F0F800339D91 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -145,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				02D21099274459D5001AC554 /* MainMenuViewController.swift */,
-				02BC62D2274BA2E700D5BF66 /* CellDetailsViewController.swift */,
+				02BC62D2274BA2E700D5BF66 /* BrandDetailsViewController.swift */,
 				02C2AA092747BBFF00004222 /* CustomTableViewCell.swift */,
 				02BEA8D42744ECBB00339D91 /* MainDetailsViewController.swift */,
 				02BEA8DF27451EDB00339D91 /* MainMenu.storyboard */,
@@ -210,6 +212,7 @@
 				02BEA8E12745979400339D91 /* DefaultsKeys.swift */,
 				02AB9FD72774B5A800297860 /* SecureStorage.swift */,
 				0272FD0F276D368F00980E9E /* Constants.swift */,
+				027F0803277B91B200B5EB20 /* NetworkService.swift */,
 				025E31AA275E8E3B00402DA5 /* CarsModel.swift */,
 				02260162274BCA9100471BB7 /* BrandsModel.swift */,
 				02FC8511277A50FD00F7C265 /* Resources */,
@@ -387,7 +390,7 @@
 				02D2109A274459D5001AC554 /* MainMenuViewController.swift in Sources */,
 				02D2109627445960001AC554 /* TopViewController.swift in Sources */,
 				0209546B2773576200547FD5 /* nikolaiev_lecture_course_project.xcdatamodeld in Sources */,
-				02BC62D3274BA2E700D5BF66 /* CellDetailsViewController.swift in Sources */,
+				02BC62D3274BA2E700D5BF66 /* BrandDetailsViewController.swift in Sources */,
 				02FC8516277A61A700F7C265 /* PlaceInfoViewController.swift in Sources */,
 				49BA10C7273327250067504C /* ProfileViewController.swift in Sources */,
 				0204D53227552B0400BFC446 /* CollectionViewCell.swift in Sources */,
@@ -403,6 +406,7 @@
 				02D2109E274459E9001AC554 /* MainViewController.swift in Sources */,
 				49BA10C3273327250067504C /* AppDelegate.swift in Sources */,
 				025E31AB275E8E3B00402DA5 /* CarsModel.swift in Sources */,
+				027F0804277B91B200B5EB20 /* NetworkService.swift in Sources */,
 				49BA10C5273327250067504C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

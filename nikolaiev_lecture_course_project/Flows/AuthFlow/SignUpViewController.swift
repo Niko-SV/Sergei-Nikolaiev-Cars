@@ -9,6 +9,7 @@ import KeychainAccess
 
 final class SignUpViewController: UIViewController, UITextFieldDelegate {
     
+    private let secureStorage = SecureStorage()
     weak var activeField: UITextField?
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -39,8 +40,8 @@ final class SignUpViewController: UIViewController, UITextFieldDelegate {
         } else {
             do {
                 UserDefaults.standard.set(true, forKey: DefaultsKeys.userLoggedIn)
-                try SecureStorage().put(object: passwordTextField.text!, for: emailTextField.text!)
-                try SecureStorage().put(object: emailTextField.text!, for: SecureStorage.Keys.email)
+                try secureStorage.put(object: passwordTextField.text!, for: emailTextField.text!)
+                try secureStorage.put(object: emailTextField.text!, for: SecureStorage.Keys.email)
                 self.performSegue(withIdentifier: "signUpSegue", sender: self)
             } catch {
                 showError(message: "Your credentials not saved")

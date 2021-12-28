@@ -7,7 +7,7 @@
 
 import UIKit
 import KeychainAccess
-/// A storage with Keychain
+
 final class SecureStorage {
     
     enum Keys {

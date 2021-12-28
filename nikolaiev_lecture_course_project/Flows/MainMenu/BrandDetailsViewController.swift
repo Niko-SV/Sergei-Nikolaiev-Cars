@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 import CoreData
 
-final class CellDetailsViewController: UIViewController, UITextViewDelegate {
+final class BrandDetailsViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak private var scrollView: UIScrollView!
     @IBOutlet weak private var brandImage: UIImageView!

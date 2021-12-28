@@ -14,16 +14,21 @@ final class TopViewController: UICollectionViewController {
     private let reuseIdentefier = "cell"
     let numberOfRows: CGFloat = 4
     private var cars = [Car]()
+    let service = NetworkService()
+    
+    private let sectionInsets = UIEdgeInsets(
+        top: 24.0,
+        left: 16.0,
+        bottom: 24.0,
+        right: 16.0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-            let horizontalSpacing = flowLayout.scrollDirection == .vertical ? flowLayout.minimumInteritemSpacing : flowLayout.minimumLineSpacing
-            let cellHeight = (collectionView.frame.height - max(0, numberOfRows-1)*horizontalSpacing)/(numberOfRows+2)
-            flowLayout.itemSize = CGSize(width: cellHeight, height: cellHeight)
-            
-        }
+        let layout  = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        collectionView.collectionViewLayout = layout
+ 
         activityIndicator.color = UIColor.red
         activityIndicator.hidesWhenStopped = true
         activityIndicator.center = view.center
@@ -32,29 +37,21 @@ final class TopViewController: UICollectionViewController {
         view.addSubview(activityIndicator)
         fetchData()
     }
-    
+
     func fetchData() {
         
-        guard let url = URL(string: Constants.carsJsonURLString) else { return }
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else { return }
-            
-            do {
-                let decoder = JSONDecoder()
-                
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                self.cars = try decoder.decode([Car].self, from: data)
-                
+        service.fetch(from: NetworkPath.cars, model: [Car].self) { (result: NetworkService.Result) in
+            switch result {
+            case let .success(value):
+                self.cars = value as! [Car]
                 DispatchQueue.main.async {
                     self.activityIndicator.stopAnimating()
                     self.collectionView?.reloadData()
                 }
-            } catch let error{
-                print("Error serialization json", error)
+            case let .error(error):
+                print("Error ", error)
             }
-            
-        }.resume()
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -62,9 +59,11 @@ final class TopViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentefier, for: indexPath) as! CollectionViewCell
-        let currentCar = cars[indexPath.row]
-        cell.setupCell(with: currentCar)
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentefier, for: indexPath)
+        if let collectionCell = cell as? CollectionViewCell {
+            let currentCar = cars[indexPath.row]
+            collectionCell.setupCell(with: currentCar)
+        }
         return cell
     }
     
@@ -76,3 +75,15 @@ final class TopViewController: UICollectionViewController {
     }
 }
 
+extension TopViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        collectionView.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 100, right: 0)
+        let paddings = sectionInsets.top + sectionInsets.bottom
+        let freeSpace = collectionView.bounds.size.height - paddings
+        let spaceForItem = freeSpace / CGFloat(numberOfRows + 1)
+        let size = CGSize(width: spaceForItem, height: spaceForItem)
+        
+        return size
+    }
+}

@@ -15,6 +15,8 @@ final class MainMenuViewController: UIViewController, UITableViewDelegate, UITab
     private let manager = CoreDataManager.shared
     var managedBrands: [NSManagedObject] = []
     
+    let service = NetworkService()
+    
     let refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
@@ -33,7 +35,7 @@ final class MainMenuViewController: UIViewController, UITableViewDelegate, UITab
         
         let showDetailsBarButton = UIBarButtonItem(title: "Details", style: .done, target: self, action: #selector(showDetails))
         self.navigationItem.rightBarButtonItem = showDetailsBarButton
-      
+        
         table.refreshControl = refreshControl
         fetchData()
         managedBrands = managedBrands.sorted(by: { ($0.value(forKeyPath: "name") as! String) < ($1.value(forKeyPath: "name") as! String)})
@@ -42,26 +44,19 @@ final class MainMenuViewController: UIViewController, UITableViewDelegate, UITab
     func fetchData() {
         fetchLocalBrands()
         if(self.managedBrands.isEmpty) {
-            guard let url = URL(string: Constants.manufacturesJsonURLString) else { return }
-            URLSession.shared.dataTask(with: url) { (data, response, error) in
-                guard let data = data else { return }
-                
-                do {
-                    let decoder = JSONDecoder()
-                    
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    let brands = try decoder.decode([Brand].self, from: data)
+            service.fetch(from: NetworkPath.manufactures, model: [Brand].self) { (result: NetworkService.Result) in
+                switch result {
+                case let .success(value):
+                    let brands = value as! [Brand]
                     self.saveBrands(brands: brands)
-                    
                     DispatchQueue.main.async {
                         self.activityIndicator.stopAnimating()
                         self.table.reloadData()
                     }
-                } catch let error{
-                    print("Error serialization json", error)
+                case let .error(error):
+                    print("Error ", error)
                 }
-                
-            }.resume()
+            }
         } else {
             self.activityIndicator.stopAnimating()
         }
@@ -91,7 +86,7 @@ final class MainMenuViewController: UIViewController, UITableViewDelegate, UITab
             managedBrands.append(brand)
         }
         
-        manager.saveMainContext()
+        manager.saveBackgorundContext()
     }
     
     private func configureCell(cell: CustomTableViewCell, for indexPath: IndexPath) {
@@ -117,7 +112,7 @@ final class MainMenuViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "MainMenu", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "CellDetailsViewController") as! CellDetailsViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "BrandDetailsViewController") as! BrandDetailsViewController
         vc.brand = managedBrands[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)

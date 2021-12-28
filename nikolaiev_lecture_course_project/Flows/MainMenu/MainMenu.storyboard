@@ -99,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="1941.5999999999999" y="-50.824587706146929"/>
         </scene>
-        <!--Cell Details View Controller-->
+        <!--Brand Details View Controller-->
         <scene sceneID="gFv-74-wY2">
             <objects>
-                <viewController storyboardIdentifier="CellDetailsViewController" id="bnU-HN-ddB" customClass="CellDetailsViewController" customModule="nikolaiev_lecture_course_project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BrandDetailsViewController" id="bnU-HN-ddB" customClass="BrandDetailsViewController" customModule="nikolaiev_lecture_course_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gu1-sp-Pmq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
