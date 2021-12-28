@@ -23,7 +23,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KT1-6Q-RUw" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="528"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner_screen" translatesAutoresizingMaskIntoConstraints="NO" id="9sY-2r-QHG">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner_screen" translatesAutoresizingMaskIntoConstraints="NO" id="9sY-2r-QHG">
                                                 <rect key="frame" x="20" y="30" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Dkh-Oh-IRy"/>
@@ -72,16 +72,16 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree with terms and conditions and privacy policy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fh2-p6-ySJ">
-                                                <rect key="frame" x="20" y="355" width="230" height="41"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="I agree with terms and conditions and privacy policy" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fh2-p6-ySJ">
+                                                <rect key="frame" x="20" y="355" width="221" height="41"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LPr-Dh-Gaw">
-                                                <rect key="frame" x="306" y="355" width="51" height="31"/>
+                                                <rect key="frame" x="306" y="360" width="51" height="31"/>
                                                 <connections>
-                                                    <action selector="agreementSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="yEj-HA-htz"/>
+                                                    <action selector="agreementSwitchValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="4Za-n4-7tk"/>
                                                 </connections>
                                             </switch>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRG-N3-uu8">
@@ -103,21 +103,21 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="fh2-p6-ySJ" secondAttribute="trailing" constant="125" id="33Y-Ba-B1x"/>
                                             <constraint firstAttribute="trailing" secondItem="LPr-Dh-Gaw" secondAttribute="trailing" constant="20" id="3Lx-Qt-CGF"/>
                                             <constraint firstItem="XHw-hx-fw6" firstAttribute="top" secondItem="bMu-ui-o8r" secondAttribute="bottom" constant="20" id="3er-oH-RWG"/>
                                             <constraint firstItem="MRG-N3-uu8" firstAttribute="leading" secondItem="KT1-6Q-RUw" secondAttribute="leading" constant="20" id="4BE-cU-2pP"/>
                                             <constraint firstItem="fh2-p6-ySJ" firstAttribute="leading" secondItem="KT1-6Q-RUw" secondAttribute="leading" constant="20" id="4NX-9q-z30"/>
                                             <constraint firstAttribute="trailing" secondItem="MRG-N3-uu8" secondAttribute="trailing" constant="20" id="5zd-aE-k5e"/>
                                             <constraint firstAttribute="trailing" secondItem="bMu-ui-o8r" secondAttribute="trailing" constant="20" id="AX2-Yi-Yg6"/>
-                                            <constraint firstItem="LPr-Dh-Gaw" firstAttribute="top" secondItem="XHw-hx-fw6" secondAttribute="bottom" constant="30" id="BFr-VX-aec"/>
                                             <constraint firstItem="9nh-6Q-OnP" firstAttribute="leading" secondItem="KT1-6Q-RUw" secondAttribute="leading" constant="20" id="Biu-Kg-loX"/>
                                             <constraint firstItem="9sY-2r-QHG" firstAttribute="leading" secondItem="KT1-6Q-RUw" secondAttribute="leading" constant="20" id="BmG-Xn-NpC"/>
                                             <constraint firstItem="XHw-hx-fw6" firstAttribute="leading" secondItem="KT1-6Q-RUw" secondAttribute="leading" constant="20" id="C6e-Kk-P4A"/>
                                             <constraint firstAttribute="trailing" secondItem="Ts2-3d-9Q6" secondAttribute="trailing" constant="20" id="Cui-bO-Fde"/>
                                             <constraint firstItem="9sY-2r-QHG" firstAttribute="top" secondItem="KT1-6Q-RUw" secondAttribute="top" constant="30" id="IAl-Rb-ygO"/>
                                             <constraint firstAttribute="trailing" secondItem="Rbr-2s-rYW" secondAttribute="trailing" constant="20" id="IJF-lF-q4F"/>
+                                            <constraint firstItem="LPr-Dh-Gaw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fh2-p6-ySJ" secondAttribute="trailing" constant="45" id="LU0-hN-ON6"/>
                                             <constraint firstItem="bMu-ui-o8r" firstAttribute="top" secondItem="Ts2-3d-9Q6" secondAttribute="bottom" constant="10" id="Lic-Hn-QhT"/>
+                                            <constraint firstItem="LPr-Dh-Gaw" firstAttribute="centerY" secondItem="fh2-p6-ySJ" secondAttribute="centerY" id="O77-2M-4hL"/>
                                             <constraint firstAttribute="bottom" secondItem="Rbr-2s-rYW" secondAttribute="bottom" constant="30" id="ZDN-AI-Ek0"/>
                                             <constraint firstItem="Rbr-2s-rYW" firstAttribute="leading" secondItem="KT1-6Q-RUw" secondAttribute="leading" constant="20" id="ZlQ-Wf-D7d"/>
                                             <constraint firstItem="MRG-N3-uu8" firstAttribute="top" secondItem="fh2-p6-ySJ" secondAttribute="bottom" constant="30" id="dSm-bY-u1Z"/>
