@@ -53,7 +53,14 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
         showSavedData()
     }
     
-   
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @IBAction func agreementSwitchValueChanged(_ sender: UISwitch) {
+        saveButton.isEnabled = sender.isOn
+    }
+    
     @IBAction func editButton(_ : UIButton) {
         viewSelected(type: EditModeType.edit)
         saveButton.isEnabled = false
@@ -96,12 +103,7 @@ final class ProfileViewController: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     
-
-    @IBAction func saveButton(_ sender: UIButton) {
-        viewSelected(type: EditModeType.view)
-    }
-    
-    private func viewSelected(type: EditModeType) {
+    private func viewSelected(type: EditModeType){
         let isEditMode = type == EditModeType.edit
         textFields.forEach({$0.isEnabled = isEditMode})
         editButton.isHidden = isEditMode
@@ -141,3 +143,5 @@ enum EditModeType {
     case edit
     case view
 }
+
+

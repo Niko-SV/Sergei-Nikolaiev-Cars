@@ -2,12 +2,31 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Using location services to display current user location on map and suggest shopping points</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
 		<false/>
 		<key>UISceneConfigurations</key>
 		<dict>
+			<key>NSAppTransportSecurity</key>
+			<dict>
+				<key>NSAllowsArbitraryLoads</key>
+				<true/>
+				<key>NSExceptionDomains</key>
+				<dict>
+					<key>example.com</key>
+					<dict>
+						<key>NSIncludesSubdomains</key>
+						<true/>
+						<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+						<true/>
+						<key>NSTemporaryExceptionMinimumTLSVersion</key>
+						<string>TLSv1.1</string>
+					</dict>
+				</dict>
+			</dict>
 			<key>UIWindowSceneSessionRoleApplication</key>
 			<array>
 				<dict>
