@@ -1,9 +1,3 @@
-//
-//  CollectionViewCellDetailsController.swift
-//  nikolaiev_lecture_course_project
-//
-//  Created by NikoS on 27.12.2021.
-//
 
 import UIKit
 
@@ -28,6 +22,15 @@ final class CollectionViewCellDetailsController: UIViewController {
         if let loadedCar = car {
             setupBrandDetailsScreen(with: loadedCar)
         }
+        editingTextFields()
+    }
+    
+    private func editingTextFields() {
+        carIDTextField.isUserInteractionEnabled = false
+        carModelTextField.isUserInteractionEnabled = false
+        carYearTextField.isUserInteractionEnabled = false
+        carAverageHorsepowerTextField.isUserInteractionEnabled = false
+        carPriceTextField.isUserInteractionEnabled = false
     }
     
     func setupBrandDetailsScreen(with car: Car) {

@@ -1,9 +1,3 @@
-//
-//  BrandsModel.swift
-//  nikolaiev_lecture_course_project
-//
-//  Created by NikoS on 22.11.2021.
-//
 
 import Foundation
 

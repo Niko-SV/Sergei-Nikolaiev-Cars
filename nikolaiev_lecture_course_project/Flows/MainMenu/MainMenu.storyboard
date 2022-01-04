@@ -241,6 +241,9 @@
                                                                 <color key="textColor" systemColor="labelColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="bnU-HN-ddB" id="ofu-rC-EC1"/>
+                                                                </connections>
                                                             </textView>
                                                         </subviews>
                                                         <constraints>
@@ -255,6 +258,7 @@
                                                     <constraint firstItem="ep7-RB-VCc" firstAttribute="leading" secondItem="x7L-nN-Ftr" secondAttribute="leading" id="Y7d-QU-UZd"/>
                                                     <constraint firstAttribute="trailing" secondItem="ep7-RB-VCc" secondAttribute="trailing" constant="8" id="c3c-PI-X4e"/>
                                                     <constraint firstAttribute="trailing" secondItem="bfz-tq-VsY" secondAttribute="trailing" constant="8" id="q0V-4d-mq4"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Zvh-tK-fzb" secondAttribute="bottom" id="rZR-PP-dI1"/>
                                                     <constraint firstItem="YIa-bU-FAM" firstAttribute="width" secondItem="x7L-nN-Ftr" secondAttribute="width" id="taY-Al-L6x"/>
                                                 </constraints>
                                             </stackView>

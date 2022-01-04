@@ -1,10 +1,3 @@
-//
-//  Brands+CoreDataClass.swift
-//  
-//
-//  Created by NikoS on 22.12.2021.
-//
-//
 
 import Foundation
 import CoreData

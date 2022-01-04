@@ -1,9 +1,3 @@
-//
-//  CellDetailsViewController.swift
-//  nikolaiev_lecture_course_project
-//
-//  Created by NikoS on 22.11.2021.
-//
 
 import UIKit
 import Kingfisher
@@ -24,6 +18,16 @@ final class BrandDetailsViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet var brandDetailsView: UIView!
         
+    weak var activeField: UITextField?
+    
+    private func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeField = textField
+    }
+    
+    private func textFieldDidEndEditing(_ textField: UITextField) {
+        activeField = nil
+    }
+    
     func editingTextFields(){
         idTextField.isUserInteractionEnabled = false
         averageHorsepowerTextField.isUserInteractionEnabled = false
@@ -41,6 +45,12 @@ final class BrandDetailsViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(BrandDetailsViewController.keyboardDidShow),
+                                               name: UIResponder.keyboardDidShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(BrandDetailsViewController.keyboardWillBeHidden),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         favoriteModelsTextView.delegate = self
         if let result = brand {
             id = Int(result.value(forKeyPath: "id") as! Int32)
@@ -55,7 +65,9 @@ final class BrandDetailsViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    weak var activeField: UITextField?
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     func textViewDidChange(_ textView: UITextView) {
         brand?.setValue(textView.text, forKey: "favoriteModels")
@@ -70,5 +82,22 @@ final class BrandDetailsViewController: UIViewController, UITextViewDelegate {
         self.averagePriceTextField.text = String(format: "%.2f", avgPrice!) + " $"
         self.averageHorsepowerTextField.text = String(describing: Int(avgHorsepower!))
         self.favoriteModelsTextView.text = favoriteModels
+    }
+    
+    @objc func keyboardDidShow(notification: Notification) {
+        let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+        guard let activeField = activeField, let keyboardHeight = keyboardSize?.height else { return }
+        
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardHeight, right: 0.0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+        let activeRect = activeField.convert(activeField.bounds, to: scrollView)
+        scrollView.scrollRectToVisible(activeRect, animated: true)
+    }
+    
+    @objc func keyboardWillBeHidden(notification: Notification) {
+        let contentInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
     }
 }

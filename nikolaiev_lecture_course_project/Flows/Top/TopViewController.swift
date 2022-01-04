@@ -1,9 +1,3 @@
-//
-//  EditFlowViewController.swift
-//  nikolaiev_lecture_course_project
-//
-//  Created by NikoS on 16.11.2021.
-//
 
 import UIKit
 import Kingfisher
@@ -37,7 +31,7 @@ final class TopViewController: UICollectionViewController {
         view.addSubview(activityIndicator)
         fetchData()
     }
-
+    
     func fetchData() {
         
         service.fetch(from: NetworkPath.cars, model: [Car].self) { (result: NetworkService.Result) in

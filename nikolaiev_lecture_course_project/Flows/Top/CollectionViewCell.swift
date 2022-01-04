@@ -1,9 +1,3 @@
-//
-//  CollectionViewCell.swift
-//  nikolaiev_lecture_course_project
-//
-//  Created by NikoS on 29.11.2021.
-//
 
 import UIKit
 import Kingfisher
