@@ -42,7 +42,7 @@
 		49BA10CA273327250067504C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BA10C8273327250067504C /* Profile.storyboard */; };
 		49BA10CC273327260067504C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49BA10CB273327260067504C /* Assets.xcassets */; };
 		49BA10CF273327260067504C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BA10CD273327260067504C /* LaunchScreen.storyboard */; };
-		5DDF40E94B8028165108AEB6 /* Pods_Sergei_Nikolaiev_Cars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B1C079B0F370119725B336 /* Pods_Sergei_Nikolaiev_Cars.framework */; };
+		BF7F3A7BD6F3CB9ECAB9FDA0 /* Pods_nikolaiev_lecture_course_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C70EAA25D48D68D4ADC6A68F /* Pods_nikolaiev_lecture_course_project.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,8 +75,8 @@
 		02D2109F274459FA001AC554 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		02FC8512277A511500F7C265 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02FC8515277A61A700F7C265 /* PlaceInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceInfoViewController.swift; sourceTree = "<group>"; };
-		28B1C079B0F370119725B336 /* Pods_Sergei_Nikolaiev_Cars.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sergei_Nikolaiev_Cars.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		49BA10BF273327250067504C /* Sergei_Nikolaiev_Cars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sergei_Nikolaiev_Cars.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29CF95686EF1407E15FDCE29 /* Pods-nikolaiev_lecture_course_project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nikolaiev_lecture_course_project.release.xcconfig"; path = "Target Support Files/Pods-nikolaiev_lecture_course_project/Pods-nikolaiev_lecture_course_project.release.xcconfig"; sourceTree = "<group>"; };
+		49BA10BF273327250067504C /* nikolaiev_lecture_course_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nikolaiev_lecture_course_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BA10C2273327250067504C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49BA10C4273327250067504C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		49BA10C6273327250067504C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -84,8 +84,8 @@
 		49BA10CB273327260067504C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49BA10CE273327260067504C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49BA10D0273327260067504C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E6DBE838CE84C223E3AD0ACE /* Pods-Sergei_Nikolaiev_Cars.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sergei_Nikolaiev_Cars.debug.xcconfig"; path = "Target Support Files/Pods-Sergei_Nikolaiev_Cars/Pods-Sergei_Nikolaiev_Cars.debug.xcconfig"; sourceTree = "<group>"; };
-		F16BC8573340ED70740CC0A3 /* Pods-Sergei_Nikolaiev_Cars.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sergei_Nikolaiev_Cars.release.xcconfig"; path = "Target Support Files/Pods-Sergei_Nikolaiev_Cars/Pods-Sergei_Nikolaiev_Cars.release.xcconfig"; sourceTree = "<group>"; };
+		C70EAA25D48D68D4ADC6A68F /* Pods_nikolaiev_lecture_course_project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nikolaiev_lecture_course_project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCF9717CD57E7CF01C9D5F65 /* Pods-nikolaiev_lecture_course_project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nikolaiev_lecture_course_project.debug.xcconfig"; path = "Target Support Files/Pods-nikolaiev_lecture_course_project/Pods-nikolaiev_lecture_course_project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DDF40E94B8028165108AEB6 /* Pods_Sergei_Nikolaiev_Cars.framework in Frameworks */,
+				BF7F3A7BD6F3CB9ECAB9FDA0 /* Pods_nikolaiev_lecture_course_project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,34 +185,26 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		266815F24BD0568A524C2B01 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				28B1C079B0F370119725B336 /* Pods_Sergei_Nikolaiev_Cars.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		49BA10B6273327250067504C = {
 			isa = PBXGroup;
 			children = (
 				029D0240277A17470019EB9A /* .gitignore */,
-				49BA10C1273327250067504C /* Sergei_Nikolaiev_Cars */,
+				49BA10C1273327250067504C /* nikolaiev_lecture_course_project */,
 				49BA10C0273327250067504C /* Products */,
 				9CA834F1B1B2588497EC34EE /* Pods */,
-				266815F24BD0568A524C2B01 /* Frameworks */,
+				A5A8172EBF4C31D2F2468BAD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		49BA10C0273327250067504C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				49BA10BF273327250067504C /* Sergei_Nikolaiev_Cars.app */,
+				49BA10BF273327250067504C /* nikolaiev_lecture_course_project.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		49BA10C1273327250067504C /* Sergei_Nikolaiev_Cars */ = {
+		49BA10C1273327250067504C /* nikolaiev_lecture_course_project */ = {
 			isa = PBXGroup;
 			children = (
 				49BA10C2273327250067504C /* AppDelegate.swift */,
@@ -230,39 +222,47 @@
 				49BA10CD273327260067504C /* LaunchScreen.storyboard */,
 				49BA10D0273327260067504C /* Info.plist */,
 			);
-			path = Sergei_Nikolaiev_Cars;
+			path = nikolaiev_lecture_course_project;
 			sourceTree = "<group>";
 		};
 		9CA834F1B1B2588497EC34EE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E6DBE838CE84C223E3AD0ACE /* Pods-Sergei_Nikolaiev_Cars.debug.xcconfig */,
-				F16BC8573340ED70740CC0A3 /* Pods-Sergei_Nikolaiev_Cars.release.xcconfig */,
+				DCF9717CD57E7CF01C9D5F65 /* Pods-nikolaiev_lecture_course_project.debug.xcconfig */,
+				29CF95686EF1407E15FDCE29 /* Pods-nikolaiev_lecture_course_project.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A5A8172EBF4C31D2F2468BAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C70EAA25D48D68D4ADC6A68F /* Pods_nikolaiev_lecture_course_project.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		49BA10BE273327250067504C /* Sergei_Nikolaiev_Cars */ = {
+		49BA10BE273327250067504C /* nikolaiev_lecture_course_project */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 49BA10D3273327260067504C /* Build configuration list for PBXNativeTarget "Sergei_Nikolaiev_Cars" */;
+			buildConfigurationList = 49BA10D3273327260067504C /* Build configuration list for PBXNativeTarget "nikolaiev_lecture_course_project" */;
 			buildPhases = (
-				72FBAB7587BC248F19AFCB8E /* [CP] Check Pods Manifest.lock */,
+				00F3878DC4AA8156480729E2 /* [CP] Check Pods Manifest.lock */,
 				49BA10BB273327250067504C /* Sources */,
 				49BA10BC273327250067504C /* Frameworks */,
 				49BA10BD273327250067504C /* Resources */,
+				544270D9F6613CC25FA0814E /* [CP] Embed Pods Frameworks */,
 				02FC8514277A526F00F7C265 /* Crashlytics dsym uploading */,
-				90DE6841CE1D1FC0DF8C6434 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Sergei_Nikolaiev_Cars;
+			name = nikolaiev_lecture_course_project;
 			productName = nikolaiev_lecture_course_project;
-			productReference = 49BA10BF273327250067504C /* Sergei_Nikolaiev_Cars.app */;
+			productReference = 49BA10BF273327250067504C /* nikolaiev_lecture_course_project.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -280,7 +280,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 49BA10BA273327250067504C /* Build configuration list for PBXProject "Sergei_Nikolaiev_Cars" */;
+			buildConfigurationList = 49BA10BA273327250067504C /* Build configuration list for PBXProject "nikolaiev_lecture_course_project" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -293,7 +293,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				49BA10BE273327250067504C /* Sergei_Nikolaiev_Cars */,
+				49BA10BE273327250067504C /* nikolaiev_lecture_course_project */,
 			);
 		};
 /* End PBXProject section */
@@ -318,6 +318,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		00F3878DC4AA8156480729E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-nikolaiev_lecture_course_project-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		02FC8514277A526F00F7C265 /* Crashlytics dsym uploading */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -336,43 +358,21 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
-		72FBAB7587BC248F19AFCB8E /* [CP] Check Pods Manifest.lock */ = {
+		544270D9F6613CC25FA0814E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Sergei_Nikolaiev_Cars-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		90DE6841CE1D1FC0DF8C6434 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sergei_Nikolaiev_Cars/Pods-Sergei_Nikolaiev_Cars-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-nikolaiev_lecture_course_project/Pods-nikolaiev_lecture_course_project-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Sergei_Nikolaiev_Cars/Pods-Sergei_Nikolaiev_Cars-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-nikolaiev_lecture_course_project/Pods-nikolaiev_lecture_course_project-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Sergei_Nikolaiev_Cars/Pods-Sergei_Nikolaiev_Cars-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-nikolaiev_lecture_course_project/Pods-nikolaiev_lecture_course_project-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -551,7 +551,7 @@
 		};
 		49BA10D4273327260067504C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6DBE838CE84C223E3AD0ACE /* Pods-Sergei_Nikolaiev_Cars.debug.xcconfig */;
+			baseConfigurationReference = DCF9717CD57E7CF01C9D5F65 /* Pods-nikolaiev_lecture_course_project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -560,7 +560,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = Z6PLFXD39N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Sergei_Nikolaiev_Cars/Info.plist;
+				INFOPLIST_FILE = nikolaiev_lecture_course_project/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -582,7 +582,7 @@
 		};
 		49BA10D5273327260067504C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F16BC8573340ED70740CC0A3 /* Pods-Sergei_Nikolaiev_Cars.release.xcconfig */;
+			baseConfigurationReference = 29CF95686EF1407E15FDCE29 /* Pods-nikolaiev_lecture_course_project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -591,7 +591,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = Z6PLFXD39N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Sergei_Nikolaiev_Cars/Info.plist;
+				INFOPLIST_FILE = nikolaiev_lecture_course_project/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -614,7 +614,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		49BA10BA273327250067504C /* Build configuration list for PBXProject "Sergei_Nikolaiev_Cars" */ = {
+		49BA10BA273327250067504C /* Build configuration list for PBXProject "nikolaiev_lecture_course_project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49BA10D1273327260067504C /* Debug */,
@@ -623,7 +623,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		49BA10D3273327260067504C /* Build configuration list for PBXNativeTarget "Sergei_Nikolaiev_Cars" */ = {
+		49BA10D3273327260067504C /* Build configuration list for PBXNativeTarget "nikolaiev_lecture_course_project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				49BA10D4273327260067504C /* Debug */,
