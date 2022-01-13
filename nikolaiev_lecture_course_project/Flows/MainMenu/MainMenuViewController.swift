@@ -27,9 +27,6 @@ final class MainMenuViewController: UIViewController, UITableViewDelegate, UITab
         view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
         
-        let showDetailsBarButton = UIBarButtonItem(title: "Details", style: .done, target: self, action: #selector(showDetails))
-        self.navigationItem.rightBarButtonItem = showDetailsBarButton
-        
         table.refreshControl = refreshControl
         fetchData()
         managedBrands = managedBrands.sorted(by: { ($0.value(forKeyPath: "name") as! String) < ($1.value(forKeyPath: "name") as! String)})

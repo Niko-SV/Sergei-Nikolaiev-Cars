@@ -14,7 +14,6 @@ final class BrandDetailsViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var averagePriceTextField: UITextField!
     @IBOutlet weak var averageHorsepowerTextField: UITextField!
-    @IBOutlet weak var favoriteModelsTextView: UITextView!
     
     @IBOutlet var brandDetailsView: UIView!
         
@@ -41,7 +40,6 @@ final class BrandDetailsViewController: UIViewController, UITextViewDelegate {
     var imgUrl: String?
     var avgHorsepower: Double?
     var avgPrice: Double?
-    var favoriteModels: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,14 +49,12 @@ final class BrandDetailsViewController: UIViewController, UITextViewDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(BrandDetailsViewController.keyboardWillBeHidden),
                                                name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        favoriteModelsTextView.delegate = self
         if let result = brand {
             id = Int(result.value(forKeyPath: "id") as! Int32)
             name = result.value(forKeyPath: "name") as! String?
             imgUrl = result.value(forKeyPath: "imgUrl") as! String?
             avgHorsepower = result.value(forKeyPath: "avgHorsepower") as! Double?
             avgPrice = result.value(forKeyPath: "avgPrice") as! Double?
-            favoriteModels = result.value(forKeyPath: "favoriteModels") as! String?
             self.setupBrandDetailsScreen(with: result)
             
             editingTextFields()
@@ -69,11 +65,6 @@ final class BrandDetailsViewController: UIViewController, UITextViewDelegate {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func textViewDidChange(_ textView: UITextView) {
-        brand?.setValue(textView.text, forKey: "favoriteModels")
-        manager.saveMainContext()
-     }
-    
     func setupBrandDetailsScreen(with brand: NSManagedObject) {
         let url = URL(string: imgUrl ?? "")
         self.brandImage.kf.setImage(with: url)
@@ -81,7 +72,6 @@ final class BrandDetailsViewController: UIViewController, UITextViewDelegate {
         self.idTextField.text = String(describing: id!)
         self.averagePriceTextField.text = String(format: "%.2f", avgPrice!) + " $"
         self.averageHorsepowerTextField.text = String(describing: Int(avgHorsepower!))
-        self.favoriteModelsTextView.text = favoriteModels
     }
     
     @objc func keyboardDidShow(notification: Notification) {

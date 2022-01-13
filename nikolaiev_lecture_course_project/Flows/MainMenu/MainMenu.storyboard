@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Va7-FC-Q8I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Va7-FC-Q8I">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -111,10 +111,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEW-QU-rL9" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="497.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="409.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="x7L-nN-Ftr">
-                                                <rect key="frame" x="8" y="0.0" width="367" height="497.5"/>
+                                                <rect key="frame" x="8" y="0.0" width="367" height="409.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ekz-sr-I1L">
                                                         <rect key="frame" x="0.0" y="0.0" width="367" height="195"/>
@@ -223,42 +223,12 @@
                                                             <constraint firstAttribute="height" constant="63.5" id="vuC-5A-Fvz"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Zvh-tK-fzb">
-                                                        <rect key="frame" x="0.0" y="417.5" width="359" height="80"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite Models" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywo-Xx-xGC">
-                                                                <rect key="frame" x="0.0" y="0.0" width="359" height="22"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="srL-hy-BXH">
-                                                                <rect key="frame" x="0.0" y="30" width="359" height="50"/>
-                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="50" id="URc-cR-I6w"/>
-                                                                </constraints>
-                                                                <color key="textColor" systemColor="labelColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                                <connections>
-                                                                    <outlet property="delegate" destination="bnU-HN-ddB" id="ofu-rC-EC1"/>
-                                                                </connections>
-                                                            </textView>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="359" id="Yhg-B9-JWo"/>
-                                                            <constraint firstAttribute="height" constant="80" id="rQa-Mc-FlV"/>
-                                                        </constraints>
-                                                    </stackView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="Zvh-tK-fzb" secondAttribute="trailing" constant="8" id="Rzf-OR-fmQ"/>
                                                     <constraint firstAttribute="trailing" secondItem="fxR-Ad-W26" secondAttribute="trailing" constant="8" id="XMp-2u-NPN"/>
                                                     <constraint firstItem="ep7-RB-VCc" firstAttribute="leading" secondItem="x7L-nN-Ftr" secondAttribute="leading" id="Y7d-QU-UZd"/>
                                                     <constraint firstAttribute="trailing" secondItem="ep7-RB-VCc" secondAttribute="trailing" constant="8" id="c3c-PI-X4e"/>
                                                     <constraint firstAttribute="trailing" secondItem="bfz-tq-VsY" secondAttribute="trailing" constant="8" id="q0V-4d-mq4"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Zvh-tK-fzb" secondAttribute="bottom" id="rZR-PP-dI1"/>
                                                     <constraint firstItem="YIa-bU-FAM" firstAttribute="width" secondItem="x7L-nN-Ftr" secondAttribute="width" id="taY-Al-L6x"/>
                                                 </constraints>
                                             </stackView>
@@ -302,7 +272,6 @@
                         <outlet property="brandDetailsView" destination="Gu1-sp-Pmq" id="oLR-Up-Oqg"/>
                         <outlet property="brandImage" destination="YIa-bU-FAM" id="vbI-fO-oLX"/>
                         <outlet property="brandLabel" destination="9RC-Z3-71B" id="S38-MW-IDH"/>
-                        <outlet property="favoriteModelsTextView" destination="srL-hy-BXH" id="Ukh-YF-Plh"/>
                         <outlet property="idLabel" destination="zdD-72-XRU" id="pnw-Nd-dRI"/>
                         <outlet property="idTextField" destination="Lw0-CL-vhN" id="dYa-mJ-jEj"/>
                         <outlet property="scrollView" destination="6rD-8p-x0p" id="tfb-32-ub8"/>
@@ -351,12 +320,6 @@
     </scenes>
     <resources>
         <image name="tray" catalog="system" width="128" height="88"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
